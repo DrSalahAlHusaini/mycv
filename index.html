@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الدكتور صلاح الحسيني | متخصص في الآثار والتراث الثقافي</title>
+    <title>الدكتور صلاح الحسيني | خبير الآثار والتراث الثقافي</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -209,6 +209,8 @@
             border-radius: 8px;
             overflow: hidden;
             transition: transform 0.3s;
+            text-align: center;
+            padding: 20px;
         }
         
         .project-card:hover {
@@ -216,14 +218,14 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
-        .project-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
+        .project-icon {
+            font-size: 4rem;
+            color: var(--primary);
+            margin-bottom: 15px;
         }
         
         .project-info {
-            padding: 15px;
+            padding: 0 10px;
         }
         
         .project-title {
@@ -248,19 +250,44 @@
         
         .social-links {
             display: flex;
-            gap: 15px;
             justify-content: center;
-            margin-top: 20px;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 30px;
         }
         
-        .social-links a {
+        .social-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
             color: var(--primary);
-            font-size: 1.5rem;
-            transition: color 0.3s;
+            transition: all 0.3s;
+            width: 100px;
         }
         
-        .social-links a:hover {
-            color: var(--accent);
+        .social-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: var(--light);
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+        
+        .social-link:hover .social-icon {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        .social-name {
+            font-size: 0.9rem;
+            text-align: center;
         }
         
         footer {
@@ -280,6 +307,20 @@
                 flex-direction: column;
                 align-items: center;
             }
+            
+            .social-links {
+                gap: 15px;
+            }
+            
+            .social-link {
+                width: 80px;
+            }
+            
+            .social-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
@@ -288,7 +329,7 @@
         <div class="header-content">
             <img src="profile.jpg" alt="الدكتور صلاح الحسيني" class="profile-img">
             <h1>د. صلاح سلطان عبده الحسيني</h1>
-            <div class="title">متخصص في الآثار والتراث الثقافي</div>
+            <div class="title">خبير الآثار والتراث الثقافي</div>
             <div class="contact-info">
                 <a href="https://wa.me/212680757185" class="contact-link" target="_blank">
                     <i class="fab fa-whatsapp"></i>
@@ -309,7 +350,7 @@
     <div class="container">
         <section id="about">
             <h2><i class="fas fa-user"></i> نبذة عني</h2>
-            <p>دكتوراه في آثار ما قبل الإسلام، متخصص في الآثار اليمنية القديمة، خبرة طويلة في الآثار والتراث الثقافي، أكثر من 20 عامًا من الخبرة في مشاريع المسح والتنقيب والتوثيق الأثري، توثيق المواقع والمعالم باستخدام تقنيات متقدمة مثل نظم المعلومات الجغرافية (GIS) والاستشعار عن بُعد. لي أبحاث علمية منشورة ومشاركات في ندوات ومؤتمرات دولية. أمتلك خبرة في التعليم الجامعي، إدارة المحتوى الرقمي، وتصميم قواعد البيانات الأثرية. أجمع بين الاحترافية التقنية والمهارات القيادية والإبداعية في خدمة التراث الثقافي.</p>
+            <p>دكتوراه في آثار ما قبل الإسلام، متخصص في الآثار اليمنية القديمة، خبير في الآثار والتراث، أكثر من 20 عامًا من الخبرة في مشاريع المسح والتنقيب والتوثيق الأثري، توثيق المواقع والمعالم باستخدام تقنيات متقدمة مثل نظم المعلومات الجغرافية (GIS) والاستشعار عن بُعد. لي أبحاث علمية منشورة ومشاركات في ندوات ومؤتمرات دولية. أمتلك خبرة في التعليم الجامعي، إدارة المحتوى الرقمي، وتصميم قواعد البيانات الأثرية. أجمع بين الاحترافية التقنية والمهارات القيادية والإبداعية في خدمة التراث الثقافي.</p>
         </section>
         
         <section id="education">
@@ -346,7 +387,7 @@
                 <div class="timeline-item">
                     <div class="timeline-date">2002-الآن</div>
                     <h3 class="timeline-title">أعمال المسح الأثري</h3>
-                    <div class="timeline-subtitle">تنفيذ المسح في عدد من المواقع الأثرية</div>
+                    <div class="timeline-subtitle">مسح عدد من المواقع الأثرية</div>
                     <p>المشاركة في فرق المسح الأثري لمواقع أثرية في اليمن والمغرب. في اليمن محافظات مثل: أبين، المهرة، تعز، مارب، لحج، والمحويت، وحضرموت(2002 - 2012 وفي مشاريع توثيق وحفريات في المغرب في الرباط (شالة) ومكناس (وليلي) 2015 و 2024.</p>
                 </div>
                 <div class="timeline-item">
@@ -412,15 +453,19 @@
             <h2><i class="fas fa-book"></i> المؤلفات والمنشورات</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <img src="publication1.jpg" alt="صفحتي على اكاديميا" class="project-img">
+                    <div class="project-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
                     <div class="project-info">
-                        <h3 class="project-title">الأبحاث العلمية</h3>
-                        <p>مؤلفاتي</p>
+                        <h3 class="project-title">صفحتي على اكاديميا</h3>
+                        <p>الأبحاث والمؤلفات العلمية</p>
                         <a href="https://independent.academia.edu/SalahAlhusaini" class="btn">عرض المنشورات</a>
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="publication2.jpg" alt="أبحاث علمية" class="project-img">
+                    <div class="project-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
                     <div class="project-info">
                         <h3 class="project-title">جميع المؤلفات والبرامج</h3>
                         <p>مجموعة من الأبحاث في مجال الآثار والتراث</p>
@@ -434,7 +479,9 @@
             <h2><i class="fas fa-laptop-code"></i> الأدوات الرقمية المطورة</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <img src="tool1.jpg" alt="محول النقوش" class="project-img">
+                    <div class="project-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
                     <div class="project-info">
                         <h3 class="project-title">محول نصوص النقوش</h3>
                         <p>تحويل النقوش من الخط اللاتيني إلى العربي والعكس</p>
@@ -442,7 +489,9 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="tool2.jpg" alt="محول التواريخ" class="project-img">
+                    <div class="project-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
                     <div class="project-info">
                         <h3 class="project-title">محول التواريخ اليمنية</h3>
                         <p>تحويل التواريخ اليمنية القديمة</p>
@@ -450,7 +499,9 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="tool3.jpg" alt="خط المسند" class="project-img">
+                    <div class="project-icon">
+                        <i class="fas fa-font"></i>
+                    </div>
                     <div class="project-info">
                         <h3 class="project-title">خط المسند</h3>
                         <p>خط للكتابة بالمسند في برامج النصوص</p>
@@ -463,12 +514,42 @@
         <section id="social-media">
             <h2><i class="fas fa-share-alt"></i> وسائل التواصل والمحتوى الرقمي</h2>
             <div class="social-links">
-                <a href="https://www.facebook.com/salah.alhusaini.7" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.tiktok.com/@salah.alhusaini" target="_blank"><i class="fab fa-tiktok"></i></a>
-                <a href="https://www.youtube.com/@SSASongsSSA" target="_blank"><i class="fab fa-youtube"></i></a>
-                <a href="https://drsalahalhusaini.blogspot.com/" target="_blank"><i class="fab fa-blogger"></i></a>
-                <a href="https://www.linkedin.com/in/salahalhusaini74" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://reach.link/salahalhusaini" target="_blank"><i class="fas fa-link"></i></a>
+                <a href="https://www.facebook.com/salah.alhusaini.7" class="social-link" target="_blank">
+                    <div class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </div>
+                    <span class="social-name">فيسبوك</span>
+                </a>
+                <a href="https://www.tiktok.com/@salah.alhusaini" class="social-link" target="_blank">
+                    <div class="social-icon">
+                        <i class="fab fa-tiktok"></i>
+                    </div>
+                    <span class="social-name">تيك توك</span>
+                </a>
+                <a href="https://www.youtube.com/@SSASongsSSA" class="social-link" target="_blank">
+                    <div class="social-icon">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <span class="social-name">يوتيوب</span>
+                </a>
+                <a href="https://drsalahalhusaini.blogspot.com/" class="social-link" target="_blank">
+                    <div class="social-icon">
+                        <i class="fab fa-blogger-b"></i>
+                    </div>
+                    <span class="social-name">مدونة</span>
+                </a>
+                <a href="https://www.linkedin.com/in/salahalhusaini74" class="social-link" target="_blank">
+                    <div class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </div>
+                    <span class="social-name">لينكدإن</span>
+                </a>
+                <a href="https://reach.link/salahalhusaini" class="social-link" target="_blank">
+                    <div class="social-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <span class="social-name">الموقع</span>
+                </a>
             </div>
         </section>
     </div>
