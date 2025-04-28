@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الدكتور صلاح الحسيني | خبير الآثار والتراث الثقافي</title>
+    <title>Dr. Salah Al-Husaini | Archaeology and Cultural Heritage Expert</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -23,6 +23,12 @@
             background-color: #f9f9f9;
             margin: 0;
             padding: 0;
+            transition: all 0.3s;
+        }
+        
+        body.english {
+            direction: ltr;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         .container {
@@ -119,11 +125,23 @@
             padding-right: 30px;
         }
         
+        body.english .timeline {
+            padding-right: 0;
+            padding-left: 30px;
+        }
+        
         .timeline-item {
             position: relative;
             padding-bottom: 30px;
             padding-right: 30px;
             border-right: 2px solid var(--secondary);
+        }
+        
+        body.english .timeline-item {
+            padding-right: 0;
+            padding-left: 30px;
+            border-right: none;
+            border-left: 2px solid var(--secondary);
         }
         
         .timeline-item:last-child {
@@ -140,6 +158,11 @@
             border-radius: 50%;
             background: var(--gold);
             border: 3px solid white;
+        }
+        
+        body.english .timeline-item::before {
+            right: auto;
+            left: -9px;
         }
         
         .timeline-date {
@@ -298,6 +321,31 @@
             margin-top: 50px;
         }
         
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+        
+        .lang-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s;
+        }
+        
+        .lang-btn:hover {
+            background: var(--secondary);
+        }
+        
         @media (max-width: 768px) {
             .skills-container, .projects-grid {
                 grid-template-columns: 1fr;
@@ -321,15 +369,27 @@
                 height: 60px;
                 font-size: 2rem;
             }
+            
+            .language-switcher {
+                top: 10px;
+                left: 10px;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="language-switcher">
+        <button class="lang-btn" id="languageToggle">
+            <i class="fas fa-language"></i>
+            <span id="langText">English</span>
+        </button>
+    </div>
+
     <header>
         <div class="header-content">
             <img src="profile.jpg" alt="الدكتور صلاح الحسيني" class="profile-img">
-            <h1>د. صلاح سلطان عبده الحسيني</h1>
-            <div class="title">خبير الآثار والتراث الثقافي</div>
+            <h1 id="name">د. صلاح سلطان عبده الحسيني</h1>
+            <div class="title" id="jobTitle">خبير الآثار والتراث الثقافي</div>
             <div class="contact-info">
                 <a href="https://wa.me/212680757185" class="contact-link" target="_blank">
                     <i class="fab fa-whatsapp"></i>
@@ -341,7 +401,7 @@
                 </a>
                 <div class="contact-item">
                     <i class="fas fa-map-marker-alt"></i>
-                    <span>الرباط، المملكة المغربية</span>
+                    <span id="location">الرباط، المملكة المغربية</span>
                 </div>
             </div>
         </div>
@@ -349,117 +409,116 @@
     
     <div class="container">
         <section id="about">
-            <h2><i class="fas fa-user"></i> نبذة عني</h2>
-            <p>دكتوراه في آثار ما قبل الإسلام، متخصص في الآثار اليمنية القديمة، خبير في الآثار والتراث، أكثر من 20 عامًا من الخبرة في مشاريع المسح والتنقيب والتوثيق الأثري، توثيق المواقع والمعالم باستخدام تقنيات متقدمة مثل نظم المعلومات الجغرافية (GIS) والاستشعار عن بُعد. لي أبحاث علمية منشورة ومشاركات في ندوات ومؤتمرات دولية. أمتلك خبرة في التعليم الجامعي، إدارة المحتوى الرقمي، وتصميم قواعد البيانات الأثرية. أجمع بين الاحترافية التقنية والمهارات القيادية والإبداعية في خدمة التراث الثقافي.</p>
+            <h2><i class="fas fa-user"></i> <span id="aboutTitle">نبذة عني</span></h2>
+            <p id="aboutText">دكتوراه في آثار ما قبل الإسلام، متخصص في الآثار اليمنية القديمة، خبير في الآثار والتراث، أكثر من 20 عامًا من الخبرة في مشاريع المسح والتنقيب والتوثيق الأثري، توثيق المواقع والمعالم باستخدام تقنيات متقدمة مثل نظم المعلومات الجغرافية (GIS) والاستشعار عن بُعد. لي أبحاث علمية منشورة ومشاركات في ندوات ومؤتمرات دولية. أمتلك خبرة في التعليم الجامعي، إدارة المحتوى الرقمي، وتصميم قواعد البيانات الأثرية. أجمع بين الاحترافية التقنية والمهارات القيادية والإبداعية في خدمة التراث الثقافي.</p>
         </section>
         
         <section id="education">
-            <h2><i class="fas fa-graduation-cap"></i> المؤهلات الأكاديمية</h2>
+            <h2><i class="fas fa-graduation-cap"></i> <span id="educationTitle">المؤهلات الأكاديمية</span></h2>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-date">2016</div>
-                    <h3 class="timeline-title">دكتوراه في آثار ما قبل الإسلام</h3>
-                    <div class="timeline-subtitle">كلية الآداب والعلوم الإنسانية، جامعة الحسن الثاني، المغرب</div>
-                    <p>عن أطروحة بعنوان "الحواجز الجدارية في المناطق المفتوحة في اليمن القديم - دراسة آثارية ميدانية" بتقدير مشرف جداً.</p>
+                    <h3 class="timeline-title" id="phdTitle">دكتوراه في آثار ما قبل الإسلام</h3>
+                    <div class="timeline-subtitle" id="phdSubtitle">كلية الآداب والعلوم الإنسانية، جامعة الحسن الثاني، المغرب</div>
+                    <p id="phdDesc">عن أطروحة بعنوان "الحواجز الجدارية في المناطق المفتوحة في اليمن القديم - دراسة آثارية ميدانية" بتقدير مشرف جداً.</p>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">2009</div>
-                    <h3 class="timeline-title">ماجستير في الآثار</h3>
-                    <div class="timeline-subtitle">جامعة عدن، اليمن</div>
-                    <p>عن رسالة بعنوان "طرق الدفن والأثاث الجنائزي في اليمن قبل الإسلام - موقع الحصمة، شُقرة" بتقدير ممتاز.</p>
+                    <h3 class="timeline-title" id="masterTitle">ماجستير في الآثار</h3>
+                    <div class="timeline-subtitle" id="masterSubtitle">جامعة عدن، اليمن</div>
+                    <p id="masterDesc">عن رسالة بعنوان "طرق الدفن والأثاث الجنائزي في اليمن قبل الإسلام - موقع الحصمة، شُقرة" بتقدير ممتاز.</p>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">2003</div>
-                    <h3 class="timeline-title">دبلوم في المنهجية الأثرية</h3>
-                    <div class="timeline-subtitle">المعهد الإيطالي لأفريقيا والشرق، إيطاليا</div>
+                    <h3 class="timeline-title" id="diplomaTitle">دبلوم في المنهجية الأثرية</h3>
+                    <div class="timeline-subtitle" id="diplomaSubtitle">المعهد الإيطالي لأفريقيا والشرق، إيطاليا</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">1998</div>
-                    <h3 class="timeline-title">بكالوريوس آثار قديمة</h3>
-                    <div class="timeline-subtitle">قسم الآثار - كلية الآداب - جامعة صنعاء بتقدير جيد جداً</div>
+                    <h3 class="timeline-title" id="bachelorTitle">بكالوريوس آثار قديمة</h3>
+                    <div class="timeline-subtitle" id="bachelorSubtitle">قسم الآثار - كلية الآداب - جامعة صنعاء بتقدير جيد جداً</div>
                 </div>
             </div>
         </section>
         
         <section id="experience">
-            <h2><i class="fas fa-briefcase"></i> الخبرات الميدانية</h2>
+            <h2><i class="fas fa-briefcase"></i> <span id="experienceTitle">الخبرات الميدانية</span></h2>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-date">2002-الآن</div>
-                    <h3 class="timeline-title">أعمال المسح الأثري</h3>
-                    <div class="timeline-subtitle">الاشتراك في مشاريع المسح لعدد من المواقع الأثرية</div>
-                    <p>المشاركة في فرق المسح الأثري لمواقع أثرية في اليمن والمغرب. في اليمن محافظات مثل: أبين، المهرة، تعز، مارب، لحج، والمحويت، وحضرموت(2002 - 2012 وفي مشاريع توثيق وحفريات في المغرب في الرباط (شالة) ومكناس (وليلي) 2015 و 2024.</p>
+                    <h3 class="timeline-title" id="surveyTitle">أعمال المسح الأثري</h3>
+                    <div class="timeline-subtitle" id="surveySubtitle">مسح عدد من المواقع الأثرية</div>
+                    <p id="surveyDesc">المشاركة في فرق المسح الأثري لمواقع أثرية في اليمن والمغرب. في اليمن محافظات مثل: أبين، المهرة، تعز، مارب، لحج، والمحويت، وحضرموت(2002 - 2012 وفي مشاريع توثيق وحفريات في المغرب في الرباط (شالة) ومكناس (وليلي) 2015 و 2024.</p>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">1997-الآن</div>
-                    <h3 class="timeline-title">أعمال التنقيب الأثري</h3>
-                    <p>تنفيذ عدد من التنقيبات</p>
-                    <div class="timeline-subtitle">المشاركة في أعمال الحفريات والتنقيب الميداني مواقع مثل: الحصمة 9 مواسم، واللبيب في أبين، العصيبية في  إب، المرصبة في المحويت، الرعارع في لحج، معبد أوام في مارب، تمنع وجردان في شبوة، مقولة في صنعاء، حضور همدان في صنعاء</div>
+                    <h3 class="timeline-title" id="excavationTitle">أعمال التنقيب الأثري</h3>
+                    <p id="excavationText">تنفيذ عدد من التنقيبات</p>
+                    <div class="timeline-subtitle" id="excavationSubtitle">المشاركة في أعمال الحفريات والتنقيب الميداني مواقع مثل: الحصمة 9 مواسم، واللبيب في أبين، العصيبية في  إب، المرصبة في المحويت، الرعارع في لحج، معبد أوام في مارب، تمنع وجردان في شبوة، مقولة في صنعاء، حضور همدان في صنعاء</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">2002-الآن</div>
-                    <h3 class="timeline-title">أعمال التوثيق الأثري</h3>
-                    <div class="timeline-subtitle">تنفيذ عدد من مشاريع التوثيق</div>
-                    <p>المشاركة في توثيق الآثار والمباني الأثرية والمتاحف مع فرق بحثية ومؤسسات دولية ومحلية في مشاريع توثيق أثري تضمنت تسجيل المباني الأثرية، الفخاريات واللقى الأثرية، توثيق النقوش اليمنية القديمة وحصر القطع الأثرية في المتاحف مثل متحف بيحان ومتحف بينون ومتحف جامعة ذمار ومتحف ذمار الاقليمي، بالإضافة إلى المشاركة في تصوير فيلم عن المومياوات اليمنية مع فريق دولي.</p>
+                    <h3 class="timeline-title" id="documentationTitle">أعمال التوثيق الأثري</h3>
+                    <div class="timeline-subtitle" id="documentationSubtitle">تنفيذ عدد من مشاريع التوثيق</div>
+                    <p id="documentationDesc">المشاركة في توثيق الآثار والمباني الأثرية والمتاحف مع فرق بحثية ومؤسسات دولية ومحلية في مشاريع توثيق أثري تضمنت تسجيل المباني الأثرية، الفخاريات واللقى الأثرية، توثيق النقوش اليمنية القديمة وحصر القطع الأثرية في المتاحف مثل متحف بيحان ومتحف بينون ومتحف جامعة ذمار ومتحف ذمار الاقليمي، بالإضافة إلى المشاركة في تصوير فيلم عن المومياوات اليمنية مع فريق دولي.</p>
                 </div>
             </div>
         </section>
         
         <section id="skills">
-            <h2><i class="fas fa-cogs"></i> المهارات والخبرات</h2>
+            <h2><i class="fas fa-cogs"></i> <span id="skillsTitle">المهارات والخبرات</span></h2>
             <div class="skills-container">
                 <div class="skill-category">
-                    <h3>المهارات الأثرية</h3>
+                    <h3 id="archaeologySkills">المهارات الأثرية</h3>
                     <ul class="skills-list">
-                        <li>المسح والتنقيب الأثري</li>
-                        <li>التوثيق الأثري</li>
-                        <li>دراسة اللقى الأثرية</li>
-                        <li>دراسة الطبقات الأثرية</li>
-                        <li>التصوير الفوتوغرافي للمواقع والقطع الأثرية</li>
+                        <li id="skill1">المسح والتنقيب الأثري</li>
+                        <li id="skill2">التوثيق الأثري</li>
+                        <li id="skill3">دراسة اللقى الأثرية</li>
+                        <li id="skill4">دراسة الطبقات الأثرية</li>
                     </ul>
                 </div>
                 <div class="skill-category">
-                    <h3>المهارات التقنية</h3>
+                    <h3 id="technicalSkills">المهارات التقنية</h3>
                     <ul class="skills-list">
-                        <li>نظم المعلومات الجغرافية (GIS)</li>
-                        <li>AutoCAD للرسم الهندسي</li>
-                        <li>Adobe Photoshop/InDesign</li>
-                        <li>تصميم قواعد البيانات</li>
-                        <li>تصميم برامج مساعدة لعلم الآثار</li>
-                        <li>تصميم مواقع الويب</li>
+                        <li id="skill5">نظم المعلومات الجغرافية (GIS)</li>
+                        <li id="skill6">AutoCAD للرسم الهندسي</li>
+                        <li id="skill7">Adobe Photoshop/InDesign</li>
+                        <li id="skill8">تصميم قواعد البيانات</li>
+                        <li id="skill9">تصميم برامج مساعدة لعلم الآثار</li>
+                        <li id="skill10">تصميم مواقع الويب</li>
                     </ul>
                 </div>
                 <div class="skill-category">
-                    <h3>المهارات الأكاديمية</h3>
+                    <h3 id="academicSkills">المهارات الأكاديمية</h3>
                     <ul class="skills-list">
-                        <li>البحث العلمي</li>
-                        <li>التأليف والنشر</li>
-                        <li>إدارة المجلات العلمية</li>
-                        <li>التدريس الجامعي</li>
+                        <li id="skill11">البحث العلمي</li>
+                        <li id="skill12">التأليف والنشر</li>
+                        <li id="skill13">إدارة المجلات العلمية</li>
+                        <li id="skill14">التدريس الجامعي</li>
                     </ul>
                 </div>
                 <div class="skill-category">
-                    <h3>اللغات</h3>
+                    <h3 id="languagesTitle">اللغات</h3>
                     <ul class="skills-list">
-                        <li>العربية: اللغة الأم</li>
-                        <li>الإنجليزية: متقدم</li>
-                        <li>الفرنسية: مبتدئ</li>
+                        <li id="lang1">العربية: اللغة الأم</li>
+                        <li id="lang2">الإنجليزية: متقدم</li>
+                        <li id="lang3">الفرنسية: مبتدئ</li>
                     </ul>
                 </div>
             </div>
         </section>
         
         <section id="publications">
-            <h2><i class="fas fa-book"></i> المؤلفات والمنشورات</h2>
+            <h2><i class="fas fa-book"></i> <span id="publicationsTitle">المؤلفات والمنشورات</span></h2>
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-icon">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
                     <div class="project-info">
-                        <h3 class="project-title">صفحتي على اكاديميا</h3>
-                        <p>الأبحاث والمؤلفات العلمية</p>
-                        <a href="https://independent.academia.edu/SalahAlhusaini" class="btn">عرض المنشورات</a>
+                        <h3 class="project-title" id="academiaTitle">صفحتي على اكاديميا</h3>
+                        <p id="academiaDesc">الأبحاث والمؤلفات العلمية</p>
+                        <a href="https://independent.academia.edu/SalahAlhusaini" class="btn" id="viewPublications">عرض المنشورات</a>
                     </div>
                 </div>
                 <div class="project-card">
@@ -467,25 +526,25 @@
                         <i class="fas fa-book-open"></i>
                     </div>
                     <div class="project-info">
-                        <h3 class="project-title">جميع المؤلفات والبرامج</h3>
-                        <p>مجموعة من الأبحاث في مجال الآثار والتراث</p>
-                        <a href="https://app.mediafire.com/juivgy8mbli8k" class="btn">عرض الأبحاث</a>
+                        <h3 class="project-title" id="allWorksTitle">جميع المؤلفات والبرامج</h3>
+                        <p id="allWorksDesc">مجموعة من الأبحاث في مجال الآثار والتراث</p>
+                        <a href="https://app.mediafire.com/juivgy8mbli8k" class="btn" id="viewResearch">عرض الأبحاث</a>
                     </div>
                 </div>
             </div>
         </section>
         
         <section id="digital-tools">
-            <h2><i class="fas fa-laptop-code"></i> الأدوات الرقمية المطورة</h2>
+            <h2><i class="fas fa-laptop-code"></i> <span id="toolsTitle">الأدوات الرقمية المطورة</span></h2>
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-icon">
                         <i class="fas fa-language"></i>
                     </div>
                     <div class="project-info">
-                        <h3 class="project-title">محول نصوص النقوش</h3>
-                        <p>تحويل النقوش من الخط اللاتيني إلى العربي والعكس</p>
-                        <a href="https://drsalahalhusaini.github.io/sabaic-converter.html" class="btn">استخدام الأداة</a>
+                        <h3 class="project-title" id="converterTitle">محول نصوص النقوش</h3>
+                        <p id="converterDesc">تحويل النقوش من الخط اللاتيني إلى العربي والعكس</p>
+                        <a href="https://drsalahalhusaini.github.io/sabaic-converter.html" class="btn" id="useConverter">استخدام الأداة</a>
                     </div>
                 </div>
                 <div class="project-card">
@@ -493,9 +552,9 @@
                         <i class="fas fa-clock"></i>
                     </div>
                     <div class="project-info">
-                        <h3 class="project-title">محول التواريخ اليمنية</h3>
-                        <p>تحويل التواريخ اليمنية القديمة</p>
-                        <a href="https://drsalahalhusaini.blogspot.com/p/date-converter.html" class="btn">استخدام الأداة</a>
+                        <h3 class="project-title" id="dateConverterTitle">محول التواريخ اليمنية</h3>
+                        <p id="dateConverterDesc">تحويل التواريخ اليمنية القديمة</p>
+                        <a href="https://drsalahalhusaini.blogspot.com/p/date-converter.html" class="btn" id="useDateConverter">استخدام الأداة</a>
                     </div>
                 </div>
                 <div class="project-card">
@@ -503,60 +562,249 @@
                         <i class="fas fa-font"></i>
                     </div>
                     <div class="project-info">
-                        <h3 class="project-title">خط المسند</h3>
-                        <p>خط للكتابة بالمسند في برامج النصوص</p>
-                        <a href="http://www.mediafire.com/?355y9z6rlyw4s5w" class="btn">تحميل الخط</a>
+                        <h3 class="project-title" id="fontTitle">خط المسند</h3>
+                        <p id="fontDesc">خط للكتابة بالمسند في برامج النصوص</p>
+                        <a href="http://www.mediafire.com/?355y9z6rlyw4s5w" class="btn" id="downloadFont">تحميل الخط</a>
                     </div>
                 </div>
             </div>
         </section>
         
         <section id="social-media">
-            <h2><i class="fas fa-share-alt"></i> وسائل التواصل والمحتوى الرقمي</h2>
+            <h2><i class="fas fa-share-alt"></i> <span id="socialTitle">وسائل التواصل والمحتوى الرقمي</span></h2>
             <div class="social-links">
                 <a href="https://www.facebook.com/salah.alhusaini.7" class="social-link" target="_blank">
                     <div class="social-icon">
                         <i class="fab fa-facebook-f"></i>
                     </div>
-                    <span class="social-name">فيسبوك</span>
+                    <span class="social-name" id="facebookText">فيسبوك</span>
                 </a>
                 <a href="https://www.tiktok.com/@salah.alhusaini" class="social-link" target="_blank">
                     <div class="social-icon">
                         <i class="fab fa-tiktok"></i>
                     </div>
-                    <span class="social-name">تيك توك</span>
+                    <span class="social-name" id="tiktokText">تيك توك</span>
                 </a>
-                <a href="https://www.youtube.com/@SSAantique" class="social-link" target="_blank">
+                <a href="https://www.youtube.com/@SSASongsSSA" class="social-link" target="_blank">
                     <div class="social-icon">
                         <i class="fab fa-youtube"></i>
                     </div>
-                    <span class="social-name">يوتيوب</span>
+                    <span class="social-name" id="youtubeText">يوتيوب</span>
                 </a>
                 <a href="https://drsalahalhusaini.blogspot.com/" class="social-link" target="_blank">
                     <div class="social-icon">
                         <i class="fab fa-blogger-b"></i>
                     </div>
-                    <span class="social-name">مدونة</span>
+                    <span class="social-name" id="blogText">مدونة</span>
                 </a>
                 <a href="https://www.linkedin.com/in/salahalhusaini74" class="social-link" target="_blank">
                     <div class="social-icon">
                         <i class="fab fa-linkedin-in"></i>
                     </div>
-                    <span class="social-name">لينكدإن</span>
+                    <span class="social-name" id="linkedinText">لينكدإن</span>
                 </a>
                 <a href="https://reach.link/salahalhusaini" class="social-link" target="_blank">
                     <div class="social-icon">
                         <i class="fas fa-link"></i>
                     </div>
-                    <span class="social-name">الموقع</span>
+                    <span class="social-name" id="websiteText">الموقع</span>
                 </a>
             </div>
         </section>
     </div>
     
     <footer>
-        <p>&copy; 2025 الدكتور صلاح الحسيني - جميع الحقوق محفوظة</p>
-        <p>تصميم وتطوير باستخدام HTML, CSS, JavaScript</p>
+        <p id="copyright">&copy; 2025 الدكتور صلاح الحسيني - جميع الحقوق محفوظة</p>
+        <p id="developedBy">تصميم وتطوير باستخدام HTML, CSS, JavaScript</p>
     </footer>
+
+    <script>
+        // ترجمة المحتوى
+        const translations = {
+            ar: {
+                langText: "English",
+                name: "د. صلاح سلطان عبده الحسيني",
+                jobTitle: "خبير الآثار والتراث الثقافي",
+                location: "الرباط، المملكة المغربية",
+                aboutTitle: "نبذة عني",
+                aboutText: "دكتوراه في آثار ما قبل الإسلام، متخصص في الآثار اليمنية القديمة، خبير في الآثار والتراث، أكثر من 20 عامًا من الخبرة في مشاريع المسح والتنقيب والتوثيق الأثري، توثيق المواقع والمعالم باستخدام تقنيات متقدمة مثل نظم المعلومات الجغرافية (GIS) والاستشعار عن بُعد. لي أبحاث علمية منشورة ومشاركات في ندوات ومؤتمرات دولية. أمتلك خبرة في التعليم الجامعي، إدارة المحتوى الرقمي، وتصميم قواعد البيانات الأثرية. أجمع بين الاحترافية التقنية والمهارات القيادية والإبداعية في خدمة التراث الثقافي.",
+                educationTitle: "المؤهلات الأكاديمية",
+                phdTitle: "دكتوراه في آثار ما قبل الإسلام",
+                phdSubtitle: "كلية الآداب والعلوم الإنسانية، جامعة الحسن الثاني، المغرب",
+                phdDesc: 'عن أطروحة بعنوان "الحواجز الجدارية في المناطق المفتوحة في اليمن القديم - دراسة آثارية ميدانية" بتقدير مشرف جداً.',
+                masterTitle: "ماجستير في الآثار",
+                masterSubtitle: "جامعة عدن، اليمن",
+                masterDesc: 'عن رسالة بعنوان "طرق الدفن والأثاث الجنائزي في اليمن قبل الإسلام - موقع الحصمة، شُقرة" بتقدير ممتاز.',
+                diplomaTitle: "دبلوم في المنهجية الأثرية",
+                diplomaSubtitle: "المعهد الإيطالي لأفريقيا والشرق، إيطاليا",
+                bachelorTitle: "بكالوريوس آثار قديمة",
+                bachelorSubtitle: "قسم الآثار - كلية الآداب - جامعة صنعاء بتقدير جيد جداً",
+                experienceTitle: "الخبرات الميدانية",
+                surveyTitle: "أعمال المسح الأثري",
+                surveySubtitle: "مسح عدد من المواقع الأثرية",
+                surveyDesc: "المشاركة في فرق المسح الأثري لمواقع أثرية في اليمن والمغرب. في اليمن محافظات مثل: أبين، المهرة، تعز، مارب، لحج، والمحويت، وحضرموت(2002 - 2012 وفي مشاريع توثيق وحفريات في المغرب في الرباط (شالة) ومكناس (وليلي) 2015 و 2024.",
+                excavationTitle: "أعمال التنقيب الأثري",
+                excavationText: "تنفيذ عدد من التنقيبات",
+                excavationSubtitle: "المشاركة في أعمال الحفريات والتنقيب الميداني مواقع مثل: الحصمة 9 مواسم، واللبيب في أبين، العصيبية في  إب، المرصبة في المحويت، الرعارع في لحج، معبد أوام في مارب، تمنع وجردان في شبوة، مقولة في صنعاء، حضور همدان في صنعاء",
+                documentationTitle: "أعمال التوثيق الأثري",
+                documentationSubtitle: "تنفيذ عدد من مشاريع التوثيق",
+                documentationDesc: "المشاركة في توثيق الآثار والمباني الأثرية والمتاحف مع فرق بحثية ومؤسسات دولية ومحلية في مشاريع توثيق أثري تضمنت تسجيل المباني الأثرية، الفخاريات واللقى الأثرية، توثيق النقوش اليمنية القديمة وحصر القطع الأثرية في المتاحف مثل متحف بيحان ومتحف بينون ومتحف جامعة ذمار ومتحف ذمار الاقليمي، بالإضافة إلى المشاركة في تصوير فيلم عن المومياوات اليمنية مع فريق دولي.",
+                skillsTitle: "المهارات والخبرات",
+                archaeologySkills: "المهارات الأثرية",
+                skill1: "المسح والتنقيب الأثري",
+                skill2: "التوثيق الأثري",
+                skill3: "دراسة اللقى الأثرية",
+                skill4: "دراسة الطبقات الأثرية",
+                technicalSkills: "المهارات التقنية",
+                skill5: "نظم المعلومات الجغرافية (GIS)",
+                skill6: "AutoCAD للرسم الهندسي",
+                skill7: "Adobe Photoshop/InDesign",
+                skill8: "تصميم قواعد البيانات",
+                skill9: "تصميم برامج مساعدة لعلم الآثار",
+                skill10: "تصميم مواقع الويب",
+                academicSkills: "المهارات الأكاديمية",
+                skill11: "البحث العلمي",
+                skill12: "التأليف والنشر",
+                skill13: "إدارة المجلات العلمية",
+                skill14: "التدريس الجامعي",
+                languagesTitle: "اللغات",
+                lang1: "العربية: اللغة الأم",
+                lang2: "الإنجليزية: متقدم",
+                lang3: "الفرنسية: مبتدئ",
+                publicationsTitle: "المؤلفات والمنشورات",
+                academiaTitle: "صفحتي على اكاديميا",
+                academiaDesc: "الأبحاث والمؤلفات العلمية",
+                viewPublications: "عرض المنشورات",
+                allWorksTitle: "جميع المؤلفات والبرامج",
+                allWorksDesc: "مجموعة من الأبحاث في مجال الآثار والتراث",
+                viewResearch: "عرض الأبحاث",
+                toolsTitle: "الأدوات الرقمية المطورة",
+                converterTitle: "محول نصوص النقوش",
+                converterDesc: "تحويل النقوش من الخط اللاتيني إلى العربي والعكس",
+                useConverter: "استخدام الأداة",
+                dateConverterTitle: "محول التواريخ اليمنية",
+                dateConverterDesc: "تحويل التواريخ اليمنية القديمة",
+                useDateConverter: "استخدام الأداة",
+                fontTitle: "خط المسند",
+                fontDesc: "خط للكتابة بالمسند في برامج النصوص",
+                downloadFont: "تحميل الخط",
+                socialTitle: "وسائل التواصل والمحتوى الرقمي",
+                facebookText: "فيسبوك",
+                tiktokText: "تيك توك",
+                youtubeText: "يوتيوب",
+                blogText: "مدونة",
+                linkedinText: "لينكدإن",
+                websiteText: "الموقع",
+                copyright: "&copy; 2025 الدكتور صلاح الحسيني - جميع الحقوق محفوظة",
+                developedBy: "تصميم وتطوير باستخدام HTML, CSS, JavaScript"
+            },
+            en: {
+                langText: "العربية",
+                name: "Dr. Salah Sultan Abdo Al-Husaini",
+                jobTitle: "Archaeology and Cultural Heritage Expert",
+                location: "Rabat, Kingdom of Morocco",
+                aboutTitle: "About Me",
+                aboutText: "PhD in Pre-Islamic Archaeology, specializing in ancient Yemeni antiquities, with over 20 years of experience in archaeological survey, excavation, and documentation. Expert in using advanced techniques like GIS and remote sensing for heritage documentation. Published researcher with international conference participations. Experienced in university teaching, digital content management, and archaeological database design. Combines technical expertise with leadership and creative skills in cultural heritage preservation.",
+                educationTitle: "Education",
+                phdTitle: "PhD in Pre-Islamic Archaeology",
+                phdSubtitle: "Faculty of Arts and Humanities, Hassan II University, Morocco",
+                phdDesc: 'Thesis titled "Wall Barriers in Open Areas of Ancient Yemen - An Archaeological Field Study" with highest honors.',
+                masterTitle: "Master's in Archaeology",
+                masterSubtitle: "Aden University, Yemen",
+                masterDesc: 'Thesis titled "Burial Methods and Funerary Furniture in Pre-Islamic Yemen - Al-Husmah Site, Shokra" with excellent grade.',
+                diplomaTitle: "Diploma in Archaeological Methodology",
+                diplomaSubtitle: "Italian Institute for Africa and the East, Italy",
+                bachelorTitle: "Bachelor in Ancient Archaeology",
+                bachelorSubtitle: "Department of Archaeology, Sana'a University with very good grade",
+                experienceTitle: "Field Experience",
+                surveyTitle: "Archaeological Survey Work",
+                surveySubtitle: "Survey of multiple archaeological sites",
+                surveyDesc: "Participated in archaeological survey teams for sites in Yemen and Morocco. In Yemen: Abyan, Al-Mahra, Taiz, Marib, Lahj, Al-Mahwit, and Hadramout (2002-2012). In Morocco: Documentation and excavation projects in Rabat (Chellah) and Meknes (Volubilis) 2015 and 2024.",
+                excavationTitle: "Archaeological Excavation Work",
+                excavationText: "Conducted multiple excavations",
+                excavationSubtitle: "Participation in excavation fieldwork at sites including: Al-Husmah (9 seasons), Al-Labeeb in Abyan, Al-Asaybiyah in Ibb, Al-Marsabah in Al-Mahwit, Al-Ra'are' in Lahj, Awwam Temple in Marib, Tamna' and Jardan in Shabwa, Maqolah in Sana'a, and Hadur Hamdan in Sana'a.",
+                documentationTitle: "Archaeological Documentation Work",
+                documentationSubtitle: "Implementation of documentation projects",
+                documentationDesc: "Participated in documenting antiquities, archaeological buildings, and museums with local and international research teams. Projects included registering architectural monuments, pottery and artifacts, documenting ancient Yemeni inscriptions, and inventorying museum collections at Bayhan Museum, Binon Museum, Dhamar University Museum, and Dhamar Regional Museum. Also participated in filming a documentary about Yemeni mummies with an international team.",
+                skillsTitle: "Skills and Expertise",
+                archaeologySkills: "Archaeological Skills",
+                skill1: "Archaeological survey and excavation",
+                skill2: "Archaeological documentation",
+                skill3: "Artifact analysis",
+                skill4: "Stratigraphic analysis",
+                technicalSkills: "Technical Skills",
+                skill5: "Geographic Information Systems (GIS)",
+                skill6: "AutoCAD for technical drawing",
+                skill7: "Adobe Photoshop/InDesign",
+                skill8: "Database design",
+                skill9: "Designing archaeology software tools",
+                skill10: "Web design",
+                academicSkills: "Academic Skills",
+                skill11: "Scientific research",
+                skill12: "Authoring and publishing",
+                skill13: "Managing academic journals",
+                skill14: "University teaching",
+                languagesTitle: "Languages",
+                lang1: "Arabic: Native",
+                lang2: "English: Advanced",
+                lang3: "French: Beginner",
+                publicationsTitle: "Publications",
+                academiaTitle: "My Profile on Academia",
+                academiaDesc: "Scientific research and publications",
+                viewPublications: "View Publications",
+                allWorksTitle: "All Publications and Programs",
+                allWorksDesc: "Collection of research in archaeology and heritage",
+                viewResearch: "View Research",
+                toolsTitle: "Developed Digital Tools",
+                converterTitle: "Inscriptions Text Converter",
+                converterDesc: "Convert inscriptions from Latin to Arabic script and vice versa",
+                useConverter: "Use Tool",
+                dateConverterTitle: "Yemeni Date Converter",
+                dateConverterDesc: "Convert ancient Yemeni dates",
+                useDateConverter: "Use Tool",
+                fontTitle: "Musnad Font",
+                fontDesc: "Font for writing in Musnad script in text programs",
+                downloadFont: "Download Font",
+                socialTitle: "Social Media and Digital Content",
+                facebookText: "Facebook",
+                tiktokText: "TikTok",
+                youtubeText: "YouTube",
+                blogText: "Blog",
+                linkedinText: "LinkedIn",
+                websiteText: "Website",
+                copyright: "&copy; 2025 Dr. Salah Al-Husaini - All Rights Reserved",
+                developedBy: "Designed and developed with HTML, CSS, JavaScript"
+            }
+        };
+
+        // تبديل اللغة
+        const languageToggle = document.getElementById('languageToggle');
+        let currentLang = 'ar';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            updateContent(currentLang);
+            document.body.classList.toggle('english', currentLang === 'en');
+        }
+
+        function updateContent(lang) {
+            const elements = document.querySelectorAll('[id]');
+            elements.forEach(element => {
+                const translation = translations[lang][element.id];
+                if (translation !== undefined) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.value = translation;
+                    } else {
+                        element.innerHTML = translation;
+                    }
+                }
+            });
+        }
+
+        languageToggle.addEventListener('click', toggleLanguage);
+
+        // التهيئة الأولية
+        updateContent(currentLang);
+    </script>
 </body>
 </html>
