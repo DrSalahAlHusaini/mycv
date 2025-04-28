@@ -1,1 +1,467 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الدكتور صلاح الحسيني | خبير الآثار والتراث الثقافي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --gold: #d4af37;
+        }
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 5px solid var(--gold);
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            margin: 10px 0;
+            font-size: 2.5rem;
+        }
+        
+        .title {
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        section {
+            background: white;
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 8px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            border-right: 4px solid var(--gold);
+        }
+        
+        h2 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 10px;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-right: 30px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-bottom: 30px;
+            padding-right: 30px;
+            border-right: 2px solid var(--secondary);
+        }
+        
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            right: -9px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--gold);
+            border: 3px solid white;
+        }
+        
+        .timeline-date {
+            font-weight: bold;
+            color: var(--accent);
+            margin-bottom: 5px;
+        }
+        
+        .timeline-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+        
+        .timeline-subtitle {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-category {
+            margin-bottom: 20px;
+        }
+        
+        .skill-category h3 {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+            color: var(--primary);
+        }
+        
+        .skills-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .skills-list li {
+            background: var(--light);
+            padding: 10px 15px;
+            margin: 5px 0;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .skills-list li::before {
+            content: '•';
+            color: var(--gold);
+            font-weight: bold;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .project-card {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .project-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .project-info {
+            padding: 15px;
+        }
+        
+        .project-title {
+            font-weight: 700;
+            margin: 10px 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: var(--secondary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: var(--primary);
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent);
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+        }
+        
+        @media (max-width: 768px) {
+            .skills-container, .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="profile.jpg" alt="الدكتور صلاح الحسيني" class="profile-img">
+            <h1>د. صلاح سلطان عبده الحسيني</h1>
+            <div class="title">خبير الآثار والتراث الثقافي</div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>الرباط، المملكة المغربية</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+212 680 757 185</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>salah.alhosaini@gmail.com</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <section id="about">
+            <h2><i class="fas fa-user"></i> نبذة عني</h2>
+            <p>دكتوراه في آثار ما قبل الإسلام، متخصص في الآثار اليمنية القديمة، خبير في الآثار والتراث، أكثر من 20 عامًا من الخبرة في مشاريع المسح والتنقيب والتوثيق الأثري، توثيق المواقع والمعالم باستخدام تقنيات متقدمة مثل نظم المعلومات الجغرافية (GIS) والاستشعار عن بُعد. لي أبحاث علمية منشورة ومشاركات في ندوات ومؤتمرات دولية. أمتلك خبرة في التعليم الجامعي، إدارة المحتوى الرقمي، وتصميم قواعد البيانات الأثرية. أجمع بين الاحترافية التقنية والمهارات القيادية والإبداعية في خدمة التراث الثقافي.</p>
+        </section>
+        
+        <section id="education">
+            <h2><i class="fas fa-graduation-cap"></i> المؤهلات الأكاديمية</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2016</div>
+                    <h3 class="timeline-title">دكتوراه في آثار ما قبل الإسلام</h3>
+                    <div class="timeline-subtitle">كلية الآداب والعلوم الإنسانية، جامعة الحسن الثاني، المغرب</div>
+                    <p>عن أطروحة بعنوان "الحواجز الجدارية في المناطق المفتوحة في اليمن القديم - دراسة آثارية ميدانية" بتقدير مشرف جداً.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2009</div>
+                    <h3 class="timeline-title">ماجستير في الآثار</h3>
+                    <div class="timeline-subtitle">جامعة عدن، اليمن</div>
+                    <p>عن رسالة بعنوان "طرق الدفن والأثاث الجنائزي في اليمن قبل الإسلام - موقع الحصمة، شُقرة" بتقدير ممتاز.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2003</div>
+                    <h3 class="timeline-title">دبلوم في المنهجية الأثرية</h3>
+                    <div class="timeline-subtitle">المعهد الإيطالي لأفريقيا والشرق، إيطاليا</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">1998</div>
+                    <h3 class="timeline-title">بكالوريوس آثار قديمة</h3>
+                    <div class="timeline-subtitle">قسم الآثار - كلية الآداب - جامعة صنعاء بتقدير جيد جداً</div>
+                </div>
 
+            </div>
+        </section>
+        
+        <section id="experience">
+            <h2><i class="fas fa-briefcase"></i> الخبرات الميدانية</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2002-الآن</div>
+                    <h3 class="timeline-title">تنفيذ الأعمال الأثرية</h3>
+                    <div class="timeline-subtitle">أعمال المسح الأثري</div>
+                    <p>o	المشاركة في فرق المسح الأثري لمواقع أثرية في اليمن والمغرب. في اليمن محافظات مثل: أبين، المهرة، تعز، مارب، لحج، والمحويت، وحضرموت(2002 - 2012 وفي مشاريع توثيق وحفريات في المغرب في الرباط (شالة) ومكناس (وليلي) 2015 و 2024.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">1997-2024</div>
+                    <h3 class="timeline-title">أعمال التنقيب الأثري</h3>
+                    <div class="timeline-subtitle">o	المشاركة في أعمال الحفريات والتنقيب الميداني مواقع مثل:. الحصمة 9 مواسم، واللبيب في أبين، العصيبية في  إب، المرصبة في المحويت، الرعارع في لحج، معبد أوام في مارب، تمنع وجردان في شبوة، مقولة في صنعاء، حضور همدان في صنعاء</div>
+                    <p>مشروع تأريخ الأنابيب الفخارية في المغرب والأردن.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2002-2012</div>
+                    <h3 class="timeline-title">أعمال التوثيق الأثري</h3>
+                    <div class="timeline-subtitle">عدد من المواقع</div>
+                    <p>o	المشاركة في توثيق الآثار والمباني الأثرية والمتاحف مع فرق بحثية ومؤسسات دولية ومحلية في مشاريع توثيق أثري تضمنت تسجيل المباني الأثرية، الفخاريات واللقى الأثرية، توثيق النقوش اليمنية القديمة وحصر القطع الأثرية في المتاحف مثل متحف بيحان ومتحف بينون ومتحف جامعة ذمار ومتحف ذمار الاقليمي، بالإضافة إلى المشاركة في تصوير فيلم عن المومياوات اليمنية مع فريق دولي.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="skills">
+            <h2><i class="fas fa-cogs"></i> المهارات والخبرات</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>المهارات الأثرية</h3>
+                    <ul class="skills-list">
+                        <li>المسح والتنقيب الأثري</li>
+                        <li>التوثيق الأثري</li>
+                        <li>دراسة اللقى الأثرية</li>
+                        <li>دراسة الطبقات الأثرية</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>المهارات التقنية</h3>
+                    <ul class="skills-list">
+                        <li>نظم المعلومات الجغرافية (GIS)</li>
+                        <li>AutoCAD للرسم الهندسي</li>
+                        <li>Adobe Photoshop/InDesign</li>
+                        <li>تصميم قواعد البيانات</li>
+                        <li>تصميم برامج مساعدة لعلم الآثار</li>
+                        <li>تصميم مواقع الويب</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>المهارات الأكاديمية</h3>
+                    <ul class="skills-list">
+                        <li>البحث العلمي</li>
+                        <li>التأليف والنشر</li>
+                        <li>إدارة المجلات العلمية</li>
+                        <li>التدريس الجامعي</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>اللغات</h3>
+                    <ul class="skills-list">
+                        <li>العربية: اللغة الأم</li>
+                        <li>الإنجليزية: متقدم</li>
+                        <li>الفرنسية: مبتدئ</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="publications">
+            <h2><i class="fas fa-book"></i> المؤلفات والمنشورات</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="publication1.jpg" alt="صفحتي على اكاديميا" class="project-img">
+                    <div class="project-info">
+                        <h3 class="project-title">الأبحاث العلمية</h3>
+                        <p>مؤلفاتي</p>
+                        <a href="https://independent.academia.edu/SalahAlhusaini" class="btn">عرض المنشورات</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="publication2.jpg" alt="أبحاث علمية" class="project-img">
+                    <div class="project-info">
+                        <h3 class="project-title">جميع المؤلفات والبرامج</h3>
+                        <p>مجموعة من الأبحاث في مجال الآثار والتراث</p>
+                        <a href="https://app.mediafire.com/juivgy8mbli8k" class="btn">عرض الأبحاث</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="digital-tools">
+            <h2><i class="fas fa-laptop-code"></i> الأدوات الرقمية المطورة</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="tool1.jpg" alt="محول النقوش" class="project-img">
+                    <div class="project-info">
+                        <h3 class="project-title">محول نصوص النقوش</h3>
+                        <p>تحويل النقوش من الخط اللاتيني إلى العربي والعكس</p>
+                        <a href="https://drsalahalhusaini.github.io/sabaic-converter.html" class="btn">استخدام الأداة</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="tool2.jpg" alt="محول التواريخ" class="project-img">
+                    <div class="project-info">
+                        <h3 class="project-title">محول التواريخ اليمنية</h3>
+                        <p>تحويل التواريخ اليمنية القديمة</p>
+                        <a href="https://drsalahalhusaini.blogspot.com/p/date-converter.html" class="btn">استخدام الأداة</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="tool3.jpg" alt="خط المسند" class="project-img">
+                    <div class="project-info">
+                        <h3 class="project-title">خط المسند</h3>
+                        <p>خط للكتابة بالمسند في برامج النصوص</p>
+                        <a href="http://www.mediafire.com/?355y9z6rlyw4s5w" class="btn">تحميل الخط</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="social-media">
+            <h2><i class="fas fa-share-alt"></i> وسائل التواصل والمحتوى الرقمي</h2>
+            <div class="social-links">
+                <a href="https://www.facebook.com/salah.alhusaini.7" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.tiktok.com/@salah.alhusaini" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.youtube.com/@SSASongsSSA" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://drsalahalhusaini.blogspot.com/" target="_blank"><i class="fab fa-blogger"></i></a>
+                <a href="https://www.linkedin.com/in/salahalhusaini74" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://reach.link/salahalhusaini" target="_blank"><i class="fas fa-link"></i></a>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 الدكتور صلاح الحسيني - جميع الحقوق محفوظة</p>
+        <p>تصميم وتطوير باستخدام HTML, CSS, JavaScript</p>
+    </footer>
+</body>
+</html>
