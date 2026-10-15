@@ -1,811 +1,1530 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Salah Al-Husaini | Archaeology and Cultural Heritage Expert</title>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>مؤلفات الدكتور صلاح سلطان عبده الحسيني</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet" />
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <style>
-        :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --accent: #e74c3c;
-            --light: #ecf0f1;
-            --dark: #2c3e50;
-            --gold: #d4af37;
-        }
-        
-        body {
-            font-family: 'Tajawal', sans-serif;
-            line-height: 1.8;
-            color: #333;
-            background-color: #f9f9f9;
+        /* ===== RESET & BASE ===== */
+        *,
+        *::before,
+        *::after {
             margin: 0;
             padding: 0;
-            transition: all 0.3s;
+            box-sizing: border-box;
         }
-        
-        body.english {
-            direction: ltr;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        html {
+            scroll-behavior: smooth;
         }
-        
+
+        body {
+            font-family: 'Cairo', 'Amiri', serif;
+            background: #e6f0fa; /* لون أزرق فاتح للصفحة */
+            color: #1f2421;
+            line-height: 1.8;
+            padding: 0 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.25s ease;
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 20px;
         }
-        
-        header {
-            background: linear-gradient(135deg, var(--primary), var(--dark));
-            color: white;
-            padding: 50px 20px;
-            text-align: center;
+
+        /* ===== HEADER / HERO (موسَّط) ===== */
+        .hero {
+            background: linear-gradient(135deg, #0b2545, #134074);
+            color: #f5efe6;
+            padding: 60px 0 50px;
+            border-radius: 0 0 40px 40px;
+            margin: 0 -20px 40px;
             position: relative;
             overflow: hidden;
-            border-bottom: 5px solid var(--gold);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+            border-bottom: 5px solid #c5a880;
+            text-align: center;
         }
-        
-        .header-content {
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -20%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at 30% 50%, rgba(201, 168, 76, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero .container {
             position: relative;
             z-index: 2;
         }
-        
-        .profile-img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid white;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-            margin-bottom: 20px;
-        }
-        
-        h1 {
-            margin: 10px 0;
-            font-size: 2.5rem;
-        }
-        
-        .title {
-            font-size: 1.5rem;
-            color: var(--gold);
-            margin-bottom: 20px;
-        }
-        
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 20px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .contact-link {
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .contact-link:hover {
-            color: var(--gold);
-            transform: translateY(-2px);
-        }
-        
-        section {
-            background: white;
-            padding: 30px;
-            margin: 30px 0;
-            border-radius: 8px;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
-            border-right: 4px solid var(--gold);
-        }
-        
-        h2 {
-            color: var(--primary);
-            border-bottom: 2px solid var(--gold);
-            padding-bottom: 10px;
-            margin-top: 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .timeline {
-            position: relative;
-            padding-right: 30px;
-        }
-        
-        body.english .timeline {
-            padding-right: 0;
-            padding-left: 30px;
-        }
-        
-        .timeline-item {
-            position: relative;
-            padding-bottom: 30px;
-            padding-right: 30px;
-            border-right: 2px solid var(--secondary);
-        }
-        
-        body.english .timeline-item {
-            padding-right: 0;
-            padding-left: 30px;
-            border-right: none;
-            border-left: 2px solid var(--secondary);
-        }
-        
-        .timeline-item:last-child {
-            padding-bottom: 0;
-        }
-        
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            right: -9px;
-            top: 0;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: var(--gold);
-            border: 3px solid white;
-        }
-        
-        body.english .timeline-item::before {
-            right: auto;
-            left: -9px;
-        }
-        
-        .timeline-date {
-            font-weight: bold;
-            color: var(--accent);
-            margin-bottom: 5px;
-        }
-        
-        .timeline-title {
-            font-weight: 700;
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-            color: var(--dark);
-        }
-        
-        .timeline-subtitle {
-            font-style: italic;
-            color: #666;
-            margin-bottom: 10px;
-        }
-        
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        
-        .skill-category {
-            margin-bottom: 20px;
-        }
-        
-        .skill-category h3 {
-            border-bottom: 1px solid #eee;
-            padding-bottom: 5px;
-            color: var(--primary);
-        }
-        
-        .skills-list {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .skills-list li {
-            background: var(--light);
-            padding: 10px 15px;
-            margin: 5px 0;
-            border-radius: 5px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .skills-list li::before {
-            content: '•';
-            color: var(--gold);
-            font-weight: bold;
-        }
-        
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        
-        .project-card {
-            border: 1px solid #eee;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.3s;
-            text-align: center;
-            padding: 20px;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .project-icon {
-            font-size: 4rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-        
-        .project-info {
-            padding: 0 10px;
-        }
-        
-        .project-title {
-            font-weight: 700;
-            margin: 10px 0;
-        }
-        
-        .btn {
+
+        .hero-badge {
             display: inline-block;
-            background: var(--primary);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            margin-top: 10px;
-            transition: background 0.3s;
+            background: rgba(201, 168, 76, 0.18);
+            color: #dbb95c;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            padding: 4px 18px;
+            border-radius: 30px;
+            border: 1px solid rgba(201, 168, 76, 0.25);
+            margin-bottom: 18px;
+            text-transform: uppercase;
         }
-        
-        .btn:hover {
-            background: var(--secondary);
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+            font-family: 'Amiri', serif;
+            color: #c5a880;
         }
-        
-        .social-links {
+
+        .hero h1 span {
+            color: #dbb95c;
+        }
+
+        .hero .subtitle {
+            font-size: 1.15rem;
+            font-weight: 400;
+            color: #c8d0dc;
+            margin-bottom: 20px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero .bio {
+            font-size: 1rem;
+            color: #b0bbc9;
+            max-width: 800px;
+            margin-bottom: 28px;
+            line-height: 1.9;
+            font-family: 'Amiri', serif;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ===== LINKS ROW (موسَّط) ===== */
+        .links-row {
             display: flex;
-            justify-content: center;
             flex-wrap: wrap;
-            gap: 25px;
-            margin-top: 30px;
+            gap: 12px 18px;
+            margin-top: 10px;
+            justify-content: center;
         }
-        
-        .social-link {
+
+        .links-row a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.07);
+            padding: 6px 18px 6px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #dde3ed;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: background 0.25s ease, transform 0.2s ease, color 0.25s ease;
+            backdrop-filter: blur(2px);
+        }
+
+        .links-row a i {
+            font-size: 1rem;
+            color: #dbb95c;
+        }
+
+        .links-row a:hover {
+            background: rgba(201, 168, 76, 0.15);
+            color: #ffffff;
+            transform: translateY(-2px);
+            border-color: rgba(201, 168, 76, 0.25);
+        }
+
+        .links-row a .fa-facebook {
+            color: #4a8bc2;
+        }
+        .links-row a .fa-linkedin {
+            color: #0a66c2;
+        }
+        .links-row a .fa-blog {
+            color: #f57d00;
+        }
+
+        /* ===== SECTION TITLES ===== */
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #0b2545;
+            margin: 50px 0 28px;
+            padding-bottom: 10px;
+            border-bottom: 4px solid #c5a880;
+            display: inline-block;
+            position: relative;
+            font-family: 'Amiri', serif;
+        }
+
+        .section-title i {
+            color: #c5a880;
+            margin-left: 12px;
+        }
+
+        .section-title .count-badge {
+            font-size: 0.8rem;
+            background: #c5a880;
+            color: #0b2545;
+            padding: 0 14px;
+            border-radius: 30px;
+            font-weight: 700;
+            margin-right: 12px;
+            display: inline-block;
+        }
+
+        /* ===== PUBLICATION CARDS ===== */
+        .pub-year-group {
+            margin-bottom: 40px;
+        }
+
+        .pub-year {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0b2545;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .pub-year .year-line {
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(to left, #c5a880, transparent);
+            opacity: 0.4;
+        }
+
+        .pub-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 18px;
+        }
+
+        .pub-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 22px 28px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            border-right: 5px solid #c5a880;
+            transition: box-shadow 0.3s ease, transform 0.2s ease;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            text-decoration: none;
-            color: var(--primary);
-            transition: all 0.3s;
-            width: 100px;
+            gap: 6px;
         }
-        
-        .social-icon {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            background: var(--light);
-            width: 80px;
-            height: 80px;
+
+        .pub-card:hover {
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+            border-color: rgba(197, 168, 128, 0.4);
+        }
+
+        .pub-card .pub-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1f2421;
+            line-height: 1.5;
+        }
+
+        .pub-card .pub-title-ar {
+            font-family: 'Amiri', serif;
+            font-weight: 700;
+        }
+
+        .pub-card .pub-title-en {
+            font-size: 0.95rem;
+            font-weight: 400;
+            color: #3a4a5e;
+            font-family: 'Cairo', sans-serif;
+            margin-top: 2px;
+        }
+
+        .pub-card .pub-meta {
+            font-size: 0.92rem;
+            color: #4a5a6e;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 18px;
+            margin-top: 2px;
+        }
+
+        .pub-card .pub-meta i {
+            color: #c5a880;
+            width: 18px;
+            font-size: 0.85rem;
+        }
+
+        .pub-card .pub-type {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0 14px;
+            border-radius: 30px;
+            background: #e8e0d0;
+            color: #3a3a3a;
+            letter-spacing: 0.3px;
+            align-self: flex-start;
+            margin-top: 4px;
+        }
+
+        .pub-card .pub-type.book {
+            background: #dbb95c;
+            color: #0f1a2f;
+        }
+        .pub-card .pub-type.article {
+            background: #d4e0ed;
+            color: #1a3a5a;
+        }
+        .pub-card .pub-type.thesis {
+            background: #e8d5c0;
+            color: #5a3a1a;
+        }
+        .pub-card .pub-type.review {
+            background: #d0e0d0;
+            color: #1a4a2a;
+        }
+        .pub-card .pub-type.tool {
+            background: #c0d0e8;
+            color: #1a2a5a;
+        }
+
+        .pub-card .pub-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .pub-card .pub-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #0b2545;
+            background: #f0ede6;
+            padding: 4px 16px 4px 18px;
+            border-radius: 30px;
+            transition: background 0.2s ease, color 0.2s ease;
+            border: 1px solid transparent;
+        }
+
+        .pub-card .pub-links a i {
+            font-size: 0.8rem;
+            color: #c5a880;
+        }
+
+        .pub-card .pub-links a:hover {
+            background: #c5a880;
+            color: #0b2545;
+            border-color: #b39366;
+        }
+
+        .pub-card .pub-links a:hover i {
+            color: #0b2545;
+        }
+
+        /* ===== TOOLS / SOFTWARE ===== */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .tool-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 24px 22px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            transition: box-shadow 0.3s ease, transform 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .tool-card:hover {
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.07);
+            transform: translateY(-3px);
+        }
+
+        .tool-card .tool-icon {
+            font-size: 2rem;
+            color: #c5a880;
+            margin-bottom: 6px;
+        }
+
+        .tool-card .tool-name {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #0b2545;
+        }
+
+        .tool-card .tool-desc {
+            font-size: 0.9rem;
+            color: #4a5a6e;
+            flex: 1;
+        }
+
+        .tool-card .tool-link {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #0b2545;
+            background: #f0ede6;
+            padding: 4px 18px;
+            border-radius: 30px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            align-self: flex-start;
+            transition: background 0.2s ease, color 0.2s ease;
+            margin-top: 6px;
+        }
+
+        .tool-card .tool-link i {
+            color: #c5a880;
+        }
+
+        .tool-card .tool-link:hover {
+            background: #c5a880;
+            color: #0b2545;
+        }
+
+        .tool-card .tool-link:hover i {
+            color: #0b2545;
+        }
+
+        /* ===== VIDEOS (تحسين العرض المصغر) ===== */
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 10px;
+        }
+
+        .video-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            transition: box-shadow 0.3s ease, transform 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .video-card:hover {
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .video-thumb-link {
+            position: relative;
+            display: block;
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 16 / 9;
+            background: #000;
+        }
+
+        .video-thumb-link img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .video-thumb-link:hover img {
+            transform: scale(1.03);
+            opacity: 0.9;
+        }
+
+        /* أيقونة التشغيل المتراكبة */
+        .play-icon-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 3.8rem;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+            transition: all 0.25s ease;
+            pointer-events: none; /* تسمح بالضغط على الرابط من خلال الأيقونة */
+        }
+
+        .video-thumb-link:hover .play-icon-overlay {
+            color: #ff0000;
+            transform: translate(-50%, -50%) scale(1.1);
+            text-shadow: 0 4px 25px rgba(255, 0, 0, 0.4);
+        }
+
+        .video-card .video-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #0b2545;
+            line-height: 1.4;
+            padding: 0 4px 4px;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            margin: 60px -20px 0;
+            background: #0b2545;
+            color: #c8d0dc;
+            padding: 40px 30px 30px;
+            border-radius: 40px 40px 0 0;
+            text-align: center;
+        }
+
+        .footer .footer-brand {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #f5efe6;
+            margin-bottom: 6px;
+        }
+
+        .footer .footer-brand span {
+            color: #c5a880;
+        }
+
+        .footer .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 14px 24px;
+            margin: 16px 0 14px;
+        }
+
+        .footer .footer-links a {
+            font-size: 0.9rem;
+            color: #b0bbc9;
+            transition: color 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .footer .footer-links a i {
+            color: #c5a880;
+        }
+
+        .footer .footer-links a:hover {
+            color: #ffffff;
+        }
+
+        .footer .footer-copy {
+            font-size: 0.85rem;
+            color: #7a8a9e;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding-top: 16px;
+            margin-top: 6px;
+        }
+
+        /* ===== BACK TO TOP ===== */
+        .back-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: #c5a880;
+            color: #0b2545;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 50%;
-            transition: all 0.3s;
-        }
-        
-        .social-link:hover .social-icon {
-            background: var(--primary);
-            color: white;
-            transform: scale(1.1);
-        }
-        
-        .social-name {
-            font-size: 0.9rem;
-            text-align: center;
-        }
-        
-        footer {
-            background: var(--dark);
-            color: white;
-            text-align: center;
-            padding: 30px;
-            margin-top: 50px;
-        }
-        
-        .language-switcher {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 1000;
-        }
-        
-        .lang-btn {
-            background: var(--primary);
-            color: white;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 18px rgba(197, 168, 128, 0.35);
+            transition: background 0.25s ease, transform 0.2s ease;
             border: none;
-            padding: 8px 15px;
-            border-radius: 20px;
             cursor: pointer;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            transition: all 0.3s;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
         }
-        
-        .lang-btn:hover {
-            background: var(--secondary);
+
+        .back-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
         }
-        
+
+        .back-top:hover {
+            background: #b39366;
+            transform: scale(1.05);
+        }
+
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
-            .skills-container, .projects-grid {
+            .hero {
+                padding: 40px 0 35px;
+                border-radius: 0 0 24px 24px;
+                margin: 0 -20px 30px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1rem;
+            }
+
+            .hero .bio {
+                font-size: 0.9rem;
+            }
+
+            .links-row a {
+                font-size: 0.8rem;
+                padding: 4px 14px 4px 16px;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+                margin-top: 35px;
+            }
+
+            .pub-card {
+                padding: 16px 18px;
+            }
+
+            .pub-card .pub-title {
+                font-size: 1rem;
+            }
+
+            .pub-card .pub-meta {
+                font-size: 0.82rem;
+                gap: 4px 12px;
+            }
+
+            .tools-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .contact-info {
-                flex-direction: column;
-                align-items: center;
+
+            .videos-grid {
+                grid-template-columns: 1fr 1fr;
             }
-            
-            .social-links {
-                gap: 15px;
+
+            .footer {
+                padding: 30px 16px 24px;
+                border-radius: 24px 24px 0 0;
+                margin: 40px -20px 0;
             }
-            
-            .social-link {
-                width: 80px;
+
+            .back-top {
+                bottom: 20px;
+                left: 20px;
+                width: 42px;
+                height: 42px;
+                font-size: 1rem;
             }
-            
-            .social-icon {
-                width: 60px;
-                height: 60px;
-                font-size: 2rem;
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.5rem;
             }
-            
-            .language-switcher {
-                top: 10px;
-                left: 10px;
+            .hero .subtitle {
+                font-size: 0.9rem;
+            }
+            .links-row {
+                gap: 8px 12px;
+            }
+            .links-row a {
+                font-size: 0.7rem;
+                padding: 3px 10px 3px 12px;
+            }
+            .pub-card .pub-links a {
+                font-size: 0.7rem;
+                padding: 2px 12px 2px 14px;
+            }
+            .videos-grid {
+                grid-template-columns: 1fr;
+            }
+            .play-icon-overlay {
+                font-size: 2.8rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="language-switcher">
-        <button class="lang-btn" id="languageToggle">
-            <i class="fas fa-language"></i>
-            <span id="langText">English</span>
-        </button>
-    </div>
 
-    <header>
-        <div class="header-content">
-            <img src="profile.jpg" alt="الدكتور صلاح الحسيني" class="profile-img">
-            <h1 id="name">د. صلاح سلطان عبده الحسيني</h1>
-            <div class="title" id="jobTitle">خبير في الآثار والتراث الثقافي</div>
-            <div class="contact-info">
-                <a href="https://wa.me/212680757185" class="contact-link" target="_blank">
-                    <i class="fab fa-whatsapp"></i>
-                    <span>+212 680 757 185</span>
-                </a>
-                <a href="mailto:salah.alhosaini@gmail.com" class="contact-link">
-                    <i class="fas fa-envelope"></i>
-                    <span>salah.alhosaini@gmail.com</span>
-                </a>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span id="location">الرباط، المملكة المغربية</span>
-                </div>
+    <!-- ===== BACK TO TOP ===== -->
+    <button class="back-top" id="backTop" aria-label="العودة للأعلى">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ===== HERO (موسَّط) ===== -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero-badge">
+                <i class="fas fa-scroll"></i> مؤلفات وأبحاث علمية
+            </div>
+            <h1>الدكتور <span>صلاح سلطان عبده الحسيني</span></h1>
+            <p class="subtitle">
+                <i class="fas fa-university" style="color:#dbb95c;margin-left:8px;"></i>
+                دكتوراه في آثار ما قبل الإسلام &bull; متخصص في الآثار اليمنية القديمة
+            </p>
+            <div class="bio">
+                خبير في الآثار والتراث، أكثر من 20 عامًا من الخبرة في مشاريع المسح والتنقيب والتوثيق الأثري.
+                توثيق المواقع والمعالم باستخدام تقنيات متقدمة مثل نظم المعلومات الجغرافية (GIS) والاستشعار عن بُعد.
+                أبحاث علمية منشورة ومشاركات في ندوات ومؤتمرات دولية. خبرة في التعليم الجامعي، إدارة المحتوى الرقمي،
+                وتصميم قواعد البيانات الأثرية. أجمع بين الاحترافية التقنية والمهارات القيادية والإبداعية في خدمة التراث الثقافي.
+            </div>
+
+            <div class="links-row">
+                <a href="https://independent.academia.edu/SalahAlhusaini" target="_blank"><i class="fas fa-graduation-cap"></i> أكاديميا</a>
+                <a href="https://orcid.org/0009-0003-1391-4768" target="_blank"><i class="fas fa-id-card"></i> ORCID</a>
+                <a href="https://www.linkedin.com/in/alhusainisalah74" target="_blank"><i class="fab fa-linkedin"></i> لينكدان</a>
+                <a href="https://drsalahalhusaini.blogspot.com/" target="_blank"><i class="fas fa-blog"></i> بلوغبوست</a>
+                <a href="https://drsalahalhusaini.github.io/mycv/" target="_blank"><i class="fas fa-file-pdf"></i> السيرة الذاتية</a>
             </div>
         </div>
     </header>
-    
-    <div class="container">
-        <section id="about">
-            <h2><i class="fas fa-user"></i> <span id="aboutTitle">نبذة عني</span></h2>
-            <p id="aboutText">دكتوراه في آثار ما قبل الإسلام، متخصص في الآثار اليمنية القديمة، خبير في الآثار والتراث، أكثر من 20 عامًا من الخبرة في مشاريع المسح والتنقيب والتوثيق الأثري، توثيق المواقع والمعالم باستخدام تقنيات متقدمة مثل نظم المعلومات الجغرافية (GIS) والاستشعار عن بُعد. لي أبحاث علمية منشورة ومشاركات في ندوات ومؤتمرات دولية. أمتلك خبرة في التعليم الجامعي، إدارة المحتوى الرقمي، وتصميم قواعد البيانات الأثرية. أجمع بين الاحترافية التقنية والمهارات القيادية والإبداعية في خدمة التراث الثقافي.</p>
-        </section>
-        
-        <section id="education">
-            <h2><i class="fas fa-graduation-cap"></i> <span id="educationTitle">المؤهلات الأكاديمية</span></h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">2016</div>
-                    <h3 class="timeline-title" id="phdTitle">دكتوراه في آثار ما قبل الإسلام</h3>
-                    <div class="timeline-subtitle" id="phdSubtitle">كلية الآداب والعلوم الإنسانية، جامعة الحسن الثاني، المغرب</div>
-                    <p id="phdDesc">عن أطروحة بعنوان "الحواجز الجدارية في المناطق المفتوحة في اليمن القديم - دراسة آثارية ميدانية" بتقدير مشرف جداً.</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2009</div>
-                    <h3 class="timeline-title" id="masterTitle">ماجستير في الآثار</h3>
-                    <div class="timeline-subtitle" id="masterSubtitle">جامعة عدن، اليمن</div>
-                    <p id="masterDesc">عن رسالة بعنوان "طرق الدفن والأثاث الجنائزي في اليمن قبل الإسلام - موقع الحصمة، شُقرة" بتقدير ممتاز.</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2003</div>
-                    <h3 class="timeline-title" id="diplomaTitle">دبلوم في المنهجية الأثرية</h3>
-                    <div class="timeline-subtitle" id="diplomaSubtitle">المعهد الإيطالي لأفريقيا والشرق، إيطاليا</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">1998</div>
-                    <h3 class="timeline-title" id="bachelorTitle">بكالوريوس آثار قديمة</h3>
-                    <div class="timeline-subtitle" id="bachelorSubtitle">قسم الآثار - كلية الآداب - جامعة صنعاء بتقدير جيد جداً</div>
-                </div>
+
+    <main class="container">
+
+        <!-- ===== PUBLICATIONS ===== -->
+        <h2 class="section-title">
+            <i class="fas fa-book-open"></i> قائمة المؤلفات والأبحاث العلمية
+            <span class="count-badge">40+</span>
+        </h2>
+
+        <!-- 2026 -->
+        <div class="pub-year-group">
+            <div class="pub-year">
+                2026
+                <span class="year-line"></span>
             </div>
-        </section>
-        
-        <section id="experience">
-            <h2><i class="fas fa-briefcase"></i> <span id="experienceTitle">الخبرات الميدانية</span></h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">2002-الآن</div>
-                    <h3 class="timeline-title" id="surveyTitle">أعمال المسح الأثري</h3>
-                    <div class="timeline-subtitle" id="surveySubtitle">مسح عدد من المواقع الأثرية</div>
-                    <p id="surveyDesc">المشاركة في فرق المسح الأثري لمواقع أثرية في اليمن والمغرب. في اليمن محافظات مثل: أبين، المهرة، تعز، مارب، لحج، والمحويت، وحضرموت(2002 - 2012 وفي مشاريع توثيق وحفريات في المغرب في الرباط (شالة) ومكناس (وليلي) 2015 و 2024.</p>
+            <div class="pub-grid">
+
+                <div class="pub-card">
+                    <div class="pub-title pub-title-ar">نتائج الحفرية الإنقاذية في موقع اللُبَيْب بمديرية مودية في محافظة أبين بالجمهورية اليمنية</div>
+                    <div class="pub-title-en">"Results of the Rescue Excavation at the Lubaib Site in Mudiyah District, Abyan Governorate, Republic of Yemen"</div>
+                    <div class="pub-meta">
+                        <span><i class="fas fa-book"></i> مجلة كلية الآداب، المجلد 1، العدد 26، ص 405–439</span>
+                        <span><i class="fas fa-map-pin"></i> عدن: كلية الآداب، جامعة عدن</span>
+                    </div>
+                    <span class="pub-type article">مقال</span>
+                    <div class="pub-links">
+                        <a href="https://www.mediafire.com/file/r5ku3b8f2twblsk" target="_blank"><i class="fas fa-download"></i> تحميل</a>
+                    </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">1997-الآن</div>
-                    <h3 class="timeline-title" id="excavationTitle">أعمال التنقيب الأثري</h3>
-                    <p id="excavationText">تنفيذ عدد من التنقيبات</p>
-                    <div class="timeline-subtitle" id="excavationSubtitle">المشاركة في أعمال الحفريات والتنقيب الميداني مواقع مثل: الحصمة 9 مواسم، واللبيب في أبين، العصيبية في  إب، المرصبة في المحويت، الرعارع في لحج، معبد أوام في مارب، تمنع وجردان في شبوة، مقولة في صنعاء، حضور همدان في صنعاء</div>
+
+                <div class="pub-card">
+                    <div class="pub-title pub-title-ar">الحواجز الجدارية في المناطق المفتوحة في اليمن القديم دراسة أثرية ميدانية</div>
+                    <div class="pub-title-en">"Wall barriers in open areas in ancient Yemen, an archaeological field study"</div>
+                    <div class="pub-meta">
+                        <span><i class="fas fa-book"></i> الشارقة: معهد الشارقة للتراث (كتاب)</span>
+                    </div>
+                    <span class="pub-type book">كتاب</span>
+                    <div class="pub-links">
+                        <a href="https://www.academia.edu/165712626/2026" target="_blank"><i class="fas fa-external-link-alt"></i> Academia</a>
+                    </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2002-الآن</div>
-                    <h3 class="timeline-title" id="documentationTitle">أعمال التوثيق الأثري</h3>
-                    <div class="timeline-subtitle" id="documentationSubtitle">تنفيذ عدد من مشاريع التوثيق</div>
-                    <p id="documentationDesc">المشاركة في توثيق الآثار والمباني الأثرية والمتاحف مع فرق بحثية ومؤسسات دولية ومحلية في مشاريع توثيق أثري تضمنت تسجيل المباني الأثرية، الفخاريات واللقى الأثرية، توثيق النقوش اليمنية القديمة وحصر القطع الأثرية في المتاحف مثل متحف بيحان ومتحف بينون ومتحف جامعة ذمار ومتحف ذمار الاقليمي، بالإضافة إلى المشاركة في تصوير فيلم عن المومياوات اليمنية مع فريق دولي.</p>
+
+
+                <div class="pub-card">
+                    <div class="pub-title pub-title-ar">اللغة العربية: مكانتها وتحدياتها في العصر الحديث</div>
+                    <div class="pub-title-en">"The Arabic Language: Its Status and Challenges in the Modern Era"</div>
+                    <div class="pub-meta">
+                        <span><i class="fas fa-book"></i> المجلة الثقافية، عدد 43، مسقط: مركز السلطان قابوس العالي للثقافة والعلوم، أبريل 2026، ص 44–49.</span>
+                    </div>
+                    <span class="pub-type article">مقال</span>
+                    <div class="pub-links">
+                        <a href="https://www.mediafire.com/file/u51qx44mziynzhe" target="_blank"><i class="fas fa-download"></i> تحميل</a>
+                    </div>
                 </div>
+                    </div>
+                </div>
+
+                <div class="pub-card">
+                    <div class="pub-title pub-title-ar">من جعالة اليمن إلى زريعة المغرب المسليات في الثقافة الشعبية</div>
+                    <div class="pub-title-en">"From the «Ja‘ālah» of Yemen to the «Zari‘a» of Morocco Snack Foods in Folk Culture"</div>
+                    <div class="pub-meta">
+                        <span><i class="fas fa-book"></i> مجلة الموروث، العدد 41، ص 198–211</span>
+                        <span><i class="fas fa-map-pin"></i> الشارقة: معهد الشارقة للتراث</span>
+                    </div>
+                    <span class="pub-type article">مقال</span>
+                    <div class="pub-links">
+                        <a href="https://www.mediafire.com/file/0bxfowqsrv0jjwa" target="_blank"><i class="fas fa-download"></i> تحميل</a>
+                    </div>
+                </div>
+
             </div>
-        </section>
-        
-        <section id="skills">
-            <h2><i class="fas fa-cogs"></i> <span id="skillsTitle">المهارات والخبرات</span></h2>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3 id="archaeologySkills">المهارات الأثرية</h3>
-                    <ul class="skills-list">
-                        <li id="skill1">المسح والتنقيب الأثري</li>
-                        <li id="skill2">التوثيق الأثري</li>
-                        <li id="skill3">دراسة اللقى الأثرية</li>
-                        <li id="skill4">دراسة الطبقات الأثرية</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3 id="technicalSkills">المهارات التقنية</h3>
-                    <ul class="skills-list">
-                        <li id="skill5">نظم المعلومات الجغرافية (GIS)</li>
-                        <li id="skill6">AutoCAD للرسم الهندسي</li>
-                        <li id="skill7">Adobe Photoshop/InDesign</li>
-                        <li id="skill8">تصميم قواعد البيانات</li>
-                        <li id="skill9">تصميم برامج مساعدة لعلم الآثار</li>
-                        <li id="skill10">تصميم مواقع الويب</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3 id="academicSkills">المهارات الأكاديمية</h3>
-                    <ul class="skills-list">
-                        <li id="skill11">البحث العلمي</li>
-                        <li id="skill12">التأليف والنشر</li>
-                        <li id="skill13">إدارة المجلات العلمية</li>
-                        <li id="skill14">التدريس الجامعي</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3 id="languagesTitle">اللغات</h3>
-                    <ul class="skills-list">
-                        <li id="lang1">العربية: اللغة الأم</li>
-                        <li id="lang2">الإنجليزية: متقدم</li>
-                        <li id="lang3">الفرنسية: مبتدئ</li>
-                    </ul>
-                </div>
+        </div>
+
+        <!-- 2025 -->
+        <div class="pub-year-group">
+            <div class="pub-year">
+                2025
+                <span class="year-line"></span>
             </div>
-        </section>
-        
-        <section id="publications">
-            <h2><i class="fas fa-book"></i> <span id="publicationsTitle">المؤلفات والمنشورات</span></h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-graduation-cap"></i>
+            <div class="pub-grid">
+
+                <div class="pub-card">
+                    <div class="pub-title pub-title-ar">فكرة مشروع المنصة الوطنية لتوثيق القطع الأثرية اليمنية المنقولة: رؤية استراتيجية لحماية التراث الثقافي وتعزيز الوصول المعرفي</div>
+                    <div class="pub-title-en">"A Strategic Vision for the National Platform to Document Movable Yemeni Artifacts: Safeguarding Cultural Heritage and Enhancing Knowledge Access"</div>
+                    <div class="pub-meta">
+                        <span><i class="fas fa-book"></i> مجلة المتحف اليمني، العدد 4، ص 66–71</span>
+                        <span><i class="fas fa-map-pin"></i> صنعاء: الهيئة العامة للآثار والمتاحف</span>
                     </div>
-                    <div class="project-info">
-                        <h3 class="project-title" id="academiaTitle">صفحتي على اكاديميا</h3>
-                        <p id="academiaDesc">الأبحاث والمؤلفات العلمية</p>
-                        <a href="https://independent.academia.edu/SalahAlhusaini" class="btn" id="viewPublications">عرض المنشورات</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-book-open"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title" id="allWorksTitle">جميع المؤلفات والبرامج</h3>
-                        <p id="allWorksDesc">مجموعة من الأبحاث في مجال الآثار والتراث</p>
-                        <a href="https://www.mediafire.com/folder/juivgy8mbli8k/salah
-" class="btn" id="viewResearch">عرض الأبحاث</a>
+                    <span class="pub-type article">مقال</span>
+                    <div class="pub-links">
+                        <a href="https://www.mediafire.com/file/yuvvzguxc29ikao" target="_blank"><i class="fas fa-download"></i> تحميل</a>
                     </div>
                 </div>
+
+                <div class="pub-card">
+                    <div class="pub-title pub-title-ar">عرض ندوة "اليمن الحضارة والتاريخ (24 -25 أبريل 2024م)"</div>
+                    <div class="pub-title-en">"Symposium Review 'Yemen: Civilization and History (April 24 -25, 2024)'"</div>
+                    <div class="pub-meta">
+                        <span><i class="fas fa-book"></i> مجلة دراسات في تاريخ الجزيرة العربية وحضارتها، المجلد 2، العدد 2، ص 149–155</span>
+                        <span><i class="fas fa-map-pin"></i> جامعة الملك سعود</span>
+                    </div>
+                    <span class="pub-type review">مراجعة</span>
+                    <div class="pub-links">
+                        <a href="https://www.mediafire.com/file/1vbekpts0fls3bd" target="_blank"><i class="fas fa-download"></i> تحميل</a>
+                    </div>
+                </div>
+
             </div>
-        </section>
-        
-        <section id="digital-tools">
-            <h2><i class="fas fa-laptop-code"></i> <span id="toolsTitle">الأدوات الرقمية المطورة</span></h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-language"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title" id="converterTitle">محول نصوص النقوش</h3>
-                        <p id="converterDesc">تحويل النقوش من الخط اللاتيني إلى العربي والعكس</p>
-                        <a href="https://drsalahalhusaini.github.io/sabaic-converter.html" class="btn" id="useConverter">استخدام الأداة</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title" id="dateConverterTitle">محول التواريخ اليمنية</h3>
-                        <p id="dateConverterDesc">تحويل التواريخ اليمنية القديمة</p>
-                        <a href="https://drsalahalhusaini.blogspot.com/p/date-converter.html" class="btn" id="useDateConverter">استخدام الأداة</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-font"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title" id="fontTitle">خط المسند</h3>
-                        <p id="fontDesc">خط للكتابة بالمسند في برامج النصوص</p>
-                        <a href="http://www.mediafire.com/?355y9z6rlyw4s5w" class="btn" id="downloadFont">تحميل الخط</a>
-                    </div>
-                </div>
+        </div>
+
+        <!-- 2024 -->
+        <div class="pub-year-group">
+            <div class="pub-year">
+                2024
+                <span class="year-line"></span>
             </div>
-        </section>
-        
-        <section id="social-media">
-            <h2><i class="fas fa-share-alt"></i> <span id="socialTitle">وسائل التواصل والمحتوى الرقمي</span></h2>
-            <div class="social-links">
-                <a href="https://www.facebook.com/salah.alhusaini.7" class="social-link" target="_blank">
-                    <div class="social-icon">
-                        <i class="fab fa-facebook-f"></i>
+            <div class="pub-grid">
+
+                <div class="pub-card">
+                    <div class="pub-title pub-title-ar">نتائج أعمال مشروع حصر وتوثيق المعالم المعمارية الأثرية في مديرية مبين - محافظة حجة</div>
+                    <div class="pub-title-en">"Results of the project to inventory and document archaeological architectural landmarks in Mabin District - Hajjah Governorate"</div>
+                    <div class="pub-meta">
+                        <span><i class="fas fa-book"></i> حولية الآثار اليمنية، العدد 7، ص 116–142</span>
+                        <span><i class="fas fa-map-pin"></i> صنعاء</span>
                     </div>
-                    <span class="social-name" id="facebookText">فيسبوك</span>
+                    <span class="pub-type article">مقال</span>
+                    <div class="pub-links">
+                        <a href="https://www.mediafire.com/file/znuazkyiwikvqgj/" target="_blank"><i class="fas fa-download"></i> تحميل</a>
+                    </div>
+                </div>
+
+                <div class="pub-card">
+                    <div class="pub-title pub-title-ar">جوانب من التجربة اليمنية في استكشاف الآثار المغمورة بالمياه</div>
+                    <div class="pub-title-en">"Aspects of the Yemeni experience in exploring underwater archaeology"</div>
+                    <div class="pub-meta">
+                        <span><i class="fas fa-book"></i> كتاب: التراث الثقافي الساحلي والمغمور بالمياه، ص 212–225</span>
+                        <span><i class="fas fa-map-pin"></i> أغادير: مطابع Agadir Servies</span>
+                    </div>
+                    <span class="pub-type book">فصل كتاب</span>
+                    <div class="pub-links">
+                        <a href="https://www.mediafire.com/file/hpbo3ptuvikq00s" target="_blank"><i class="fas fa-download"></i> تحميل</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 2023 -->
+        <div class="pub-year-group">
+            <div class="pub-year">
+                2023
+                <span class="year-line"></span>
+            </div>
+            <div class="pub-grid">
+
+                <div class="pub-card">
+                    <div class="pub-title pub-title-ar">نماذج من مواقع الفن الصخري في محافظة أبين موقعي المناعة وحجر التصاوير</div>
+                    <div class="pub-title-en">"Examples of rock art sites in Abyan Governorate 'Yemen', the sites of Al-Manna and Hajar Al-Tasawir"</div>
+                    <div class="pub-meta">
+                        <span><i class="fas fa-book"></i> مجلة ريدان، العدد 11، ص 278–288</span>
+                        <span><i class="fas fa-map-pin"></i> صنعاء: الهيئة العامة للآثار والمتاحف</span>
+                    </div>
+                    <span class="pub-type article">مقال</span>
+                    <div class="pub-links">
+                        <a href="https://www.mediafire.com/file/8kdn0z1gorn2a6r" target="_blank"><i class="fas fa-download"></i> تحميل</a>
+                    </div>
+                </div>
+
+                <div class="pub-card">
+                    <div class="pub-title pub-title-ar">تجربة اليمن في البحث عن الآثار الغارقة</div>
+                    <div class="pub-title-en">"Yemen's experience in searching for underwater monuments"</div>
+                    <div class="pub-meta">
+                        <span><i class="fas fa-book"></i> ريدان، العدد 10، ص 204–217</span>
+                        <span><i class="fas fa-map-pin"></i> صنعاء: الهيئة العامة للآثار والمتاحف</span>
+                    </div>
+                    <span class="pub-type article">مقال</span>
+                    <div class="pub-links">
+                        <a href="https://www.mediafire.com/file/hmvha8t3od152wl" target="_blank"><i class="fas fa-download"></i> تحميل</a>
+                    </div>
+                </div>
+
+                <div class="pub-card">
+                    <div class="pub-title pub-title-ar">ملوك قتبان من القرن الثامن حتى السادس قبل الميلاد</div>
+                    <div class="pub-title-en">"The Kings of Qataban from the Eighth to the Sixth Century BC"</div>
+                    <div class="pub-meta">
+                        <span><i class="fas fa-book"></i> مجلة كلية الآداب جامعة عدن، العدد 20، ص 167–206</span>
+                    </div>
+                    <span class="pub-type article">مقال</span>
+                    <div class="pub-links">
+                        <a href="https://www.mediafire.com/file/g0d4z87ne4uxjgo" target="_blank"><i class="fas fa-download"></i> تحميل</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 2019 -->
+        <div class="pub-year-group">
+            <div class="pub-year">
+                2019
+                <span class="year-line"></span>
+            </div>
+            <div class="pub-grid">
+
+                <div class="pub-card">
+                    <div class="pub-title pub-title-ar">عرض أطروحة "الحواجز الجدارية في المناطق المفتوحة في اليمن القديم دراسة أثرية ميدانية"</div>
+                    <div class="pub-title-en">"Review the thesis 'Wall barriers in open areas in ancient Yemen, an archaeological field study'"</div>
+                    <div class="pub-meta">
+                        <span><i class="fas fa-book"></i> مجلة ألواح، العدد 3، المجلد 4، ص 11–18</span>
+                        <span><i class="fas fa-map-pin"></i> العراق: كلية الإمام الكاظم</span>
+                    </div>
+                    <span class="pub-type review">مراجعة</span>
+                    <div class="pub-links">
+                        <a href="https://www.mediafire.com/file/rulp6hfaccb2099" target="_blank"><i class="fas fa-download"></i> تحميل</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 2018 -->
+        <div class="pub-year-group">
+            <div class="pub-year">
+                2018
+                <span class="year-line"></span>
+            </div>
+            <div class="pub-grid">
+
+                <div class="pub-card">
+                    <div class="pub-title pub-title-ar">النتائج الأولية لحفريتي الموسمين الأول 2005م والثاني 2007م في موقع المرصبة بمحافظة المحويت، الجمهورية اليمنية</div>
+                    <div class="pub-title-en">"The preliminary results of the excavations first and second season in Al-Marşaba site Mahwit Governorate, Republic of Yemen"</div>
+                    <div class="pub-meta">
+                        <span><i class="fas fa-book"></i> مجلة السياحة والآثار، جامعة الملك سعود، المجلد 30، العدد 1، ص 1–12</span>
+                    </div>
+                    <span class="pub-type article">مقال</span>
+                    <div class="pub-links">
+                        <a href="https://www.mediafire.com/file/bsgr7jsgxzcihj1/" target="_blank"><i class="fas fa-download"></i> تحميل</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 2017 -->
+        <div class="pub-year-group">
+            <div class="pub-year">
+                2017
+                <span class="year-line"></span>
+            </div>
+            <div class="pub-grid">
+
+                <div class="pub-card">
+                    <div class="pub-title pub-title-ar">أنواع التراث الصوتي اليمني وحضوره في الأغنية المعاصرة</div>
+                    <div class="pub-title-en">"The Yemeni Sound Heritage and its Presence in Contemporary Song"</div>
+                    <div class="pub-meta">
+                        <span><i class="fas fa-book"></i> الموروث، العدد 6، ص 109–115</span>
+                        <span><i class="fas fa-map-pin"></i> الشارقة: معهد الشارقة للتراث</span>
+                    </div>
+                    <span class="pub-type article">مقال</span>
+                    <div class="pub-links">
+                        <a href="http://www.mediafire.com/file/69y930481d1fbh6" target="_blank"><i class="fas fa-download"></i> تحميل</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 2016 -->
+        <div class="pub-year-group">
+            <div class="pub-year">
+                2016
+                <span class="year-line"></span>
+            </div>
+            <div class="pub-grid">
+
+                <div class="pub-card">
+                    <div class="pub-title pub-title-ar">المستلزمات الضرورية للأعمال الأثرية "الدليل الميداني"</div>
+                    <div class="pub-title-en">"Supplies the necessary archaeological work"</div>
+                    <div class="pub-meta">
+                        <span><i class="fas fa-book"></i> الشارقة: معهد الشارقة للتراث (كتاب)</span>
+                    </div>
+                    <span class="pub-type book">كتاب</span>
+                    <div class="pub-links">
+                        <a href="https://www.mediafire.com/file/xz45u5farxsbsn4/" target="_blank"><i class="fas fa-download"></i> تحميل</a>
+                    </div>
+                </div>
+
+                <div class="pub-card">
+                    <div class="pub-title pub-title-ar">معطيات جديدة حول خربة اللسان وجدفر بن منيخر</div>
+                    <div class="pub-title-en">"New evidence for Khirbat Al Lisan and Jidfer ben Menikher"</div>
+                    <div class="pub-meta">
+                        <span><i class="fas fa-book"></i> Dirasat fi 'ilm Alathar wa altwrath, king saud university, Vol. 7, p 1–30</span>
+                    </div>
+                    <span class="pub-type article">مقال (إنجليزي)</span>
+                    <div class="pub-links">
+                        <a href="http://www.mediafire.com/file/hgcsq5hw6g36pxi" target="_blank"><i class="fas fa-download"></i> تحميل</a>
+                    </div>
+                </div>
+
+                <div class="pub-card">
+                    <div class="pub-title pub-title-ar">الحواجز الجدارية في المناطق المفتوحة في اليمن القديم دراسة آثارية ميدانية</div>
+                    <div class="pub-title-en">"Wall Barriers in Open Areas in ancient Yemen: Archaeology, Field Study"</div>
+                    <div class="pub-meta">
+                        <span><i class="fas fa-graduation-cap"></i> أطروحة دكتوراه، كلية الآداب والعلوم الإنسانية، جامعة الحسن الثاني بالدار البيضاء</span>
+                    </div>
+                    <span class="pub-type thesis">أطروحة دكتوراه</span>
+                    <div class="pub-links">
+                        <a href="http://www.mediafire.com/file/xvdxv0x9t6d18xs" target="_blank"><i class="fas fa-download"></i> تحميل</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 2013 -->
+        <div class="pub-year-group">
+            <div class="pub-year">
+                2013
+                <span class="year-line"></span>
+            </div>
+            <div class="pub-grid">
+
+                <div class="pub-card">
+                    <div class="pub-title pub-title-ar">استخدام جهاز تحديد المواقع الجغرافي في اسقاط المواقع الأثرية على الخريطة</div>
+                    <div class="pub-title-en">"Use GPS To positioning archaeological sites on the map"</div>
+                    <div class="pub-meta">
+                        <span><i class="fas fa-book"></i> مجلة جامعة عدن الإلكترونية، العدد 3، ص 255–266</span>
+                    </div>
+                    <span class="pub-type article">مقال</span>
+                    <div class="pub-links">
+                        <a href="http://www.mediafire.com/file/d4nbowlnbt4si7y" target="_blank"><i class="fas fa-download"></i> تحميل</a>
+                    </div>
+                </div>
+
+                <div class="pub-card">
+                    <div class="pub-title pub-title-ar">طرق الدفن والأثاث الجنائزي في مقابر موقع الحُصَمَة - شُقرة</div>
+                    <div class="pub-title-en">"Methods of burial and funeral furniture in the graves of the site of Hussama - shoqra"</div>
+                    <div class="pub-meta">
+                        <span><i class="fas fa-book"></i> الجمعية السعودية للدراسات الأثرية، الرياض (كتاب 444 صفحة)</span>
+                    </div>
+                    <span class="pub-type book">كتاب</span>
+                    <div class="pub-links">
+                        <a href="http://www.mediafire.com/?fqt7l2l7reqzb19" target="_blank"><i class="fas fa-download"></i> تحميل</a>
+                    </div>
+                </div>
+
+                <div class="pub-card">
+                    <div class="pub-title pub-title-ar">تقرير عن أعمال التنقيب الأثري في موقع العصيبية مديرية السدة محافظة إب الموسم الأول 2008</div>
+                    <div class="pub-title-en">"Archaeological excavations at the site Al-Osaibia –Al-Sadah, IBB governorate - 2008"</div>
+                    <div class="pub-meta">
+                        <span><i class="fas fa-book"></i> مجلة ريدان، العدد 8، ص 349–370</span>
+                        <span><i class="fas fa-users"></i> مشاركة مع: فؤاد القشم، أحمد شمسان، سمير القدسي، وآخرون</span>
+                    </div>
+                    <span class="pub-type article">مقال (مشاركة)</span>
+                    <div class="pub-links">
+                        <a href="http://www.mediafire.com/file/xiclcl9f7hufruu" target="_blank"><i class="fas fa-download"></i> تحميل</a>
+                    </div>
+                </div>
+
+                <div class="pub-card">
+                    <div class="pub-title pub-title-ar">التنقيبات الأثرية في موقع الحصمة شقرة محافظة أبين الموسم السادس 2004</div>
+                    <div class="pub-title-en">"Archeological Excavations at Al-Hosma Site Shoqra, Abyan Governorate, Sixth Season 2004"</div>
+                    <div class="pub-meta">
+                        <span><i class="fas fa-book"></i> مجلة ريدان، العدد 8، ص 199–256</span>
+                        <span><i class="fas fa-users"></i> مشاركة مع: سالم العامري، خالد الحاج، سالم منصور</span>
+                    </div>
+                    <span class="pub-type article">مقال (مشاركة)</span>
+                    <div class="pub-links">
+                        <a href="http://www.mediafire.com/file/rdxntmt3rvxkwzj" target="_blank"><i class="fas fa-download"></i> تحميل</a>
+                    </div>
+                </div>
+
+                <div class="pub-card">
+                    <div class="pub-title pub-title-ar">وثائقيات ندوة المبادرة الخليجية وآليتها التنفيذية بين السلبيات والإيجابيات</div>
+                    <div class="pub-title-en">"Documentation of the Gulf initiative symposium and its executive mechanism"</div>
+                    <div class="pub-meta">
+                        <span><i class="fas fa-book"></i> صنعاء: إصدارات مؤسسة اليمن والخليج الأكاديمية للتنمية (كتاب 122 صفحة)</span>
+                        <span><i class="fas fa-users"></i> مشاركة في التحرير</span>
+                    </div>
+                    <span class="pub-type book">كتاب (مشاركة)</span>
+                    <div class="pub-links">
+                        <a href="https://www.mediafire.com/download/aiaande4bv4ei0l" target="_blank"><i class="fas fa-download"></i> تحميل</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 2011 -->
+        <div class="pub-year-group">
+            <div class="pub-year">
+                2011
+                <span class="year-line"></span>
+            </div>
+            <div class="pub-grid">
+
+                <div class="pub-card">
+                    <div class="pub-title pub-title-ar">عرض لرسالة ماجستير: طرق الدفن والأثاث الجنائزي في اليمن قبل الإسلام، موقع الحصمة - شُقرة دراسة تطبيقية</div>
+                    <div class="pub-title-en">"Review: Burial Methods and Grave Goods in Ancient Yemen Field Study at Al-Hosamah Site – Shoqrah"</div>
+                    <div class="pub-meta">
+                        <span><i class="fas fa-book"></i> مجلة الإكليل، العدد 39، ص 210–213</span>
+                        <span><i class="fas fa-map-pin"></i> صنعاء: وزارة الثقافة</span>
+                    </div>
+                    <span class="pub-type review">مراجعة</span>
+                    <div class="pub-links">
+                        <a href="http://www.mediafire.com/file/f8ho1cdhsg44bz0" target="_blank"><i class="fas fa-download"></i> تحميل</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 2010 -->
+        <div class="pub-year-group">
+            <div class="pub-year">
+                2010
+                <span class="year-line"></span>
+            </div>
+            <div class="pub-grid">
+
+                <div class="pub-card">
+                    <div class="pub-title pub-title-ar">مواقع العصر البرونزي في مديرية موزع، تعز عاصمة اليمن الثقافية على مر العصور</div>
+                    <div class="pub-title-en">"The Bronze Age sites in Mawza' –Ta'iz Governorate"</div>
+                    <div class="pub-meta">
+                        <span><i class="fas fa-book"></i> وثائقيات المؤتمر العلمي الأول لكلية الآداب جامعة تعز، ج 1، ص 153–160</span>
+                        <span><i class="fas fa-map-pin"></i> تعز: مؤسسة السعيد للعلوم والثقافة</span>
+                    </div>
+                    <span class="pub-type article">مقال (مؤتمر)</span>
+                    <div class="pub-links">
+                        <a href="http://www.mediafire.com/file/661k13lvopw0lsa/" target="_blank"><i class="fas fa-download"></i> تحميل</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 2009 -->
+        <div class="pub-year-group">
+            <div class="pub-year">
+                2009
+                <span class="year-line"></span>
+            </div>
+            <div class="pub-grid">
+
+                <div class="pub-card">
+                    <div class="pub-title pub-title-ar">مشروع المسح الأثري الشامل للبلوك رقم (3) م/ شبوة</div>
+                    <div class="pub-title-en">"Comprehensive Archaeological Survey in 3D Seismic Area in Block 3 in Shabwah governorate"</div>
+                    <div class="pub-meta">
+                        <span><i class="fas fa-book"></i> حولية الآثار اليمنية، العدد 2، ص 117–135</span>
+                        <span><i class="fas fa-users"></i> مشاركة مع: خيران الزُبَيْدي، عبد الباسط قائد نعمان</span>
+                    </div>
+                    <span class="pub-type article">مقال (مشاركة)</span>
+                    <div class="pub-links">
+                        <a href="https://www.mediafire.com/file/u426qoxg46dul9b/" target="_blank"><i class="fas fa-download"></i> تحميل</a>
+                    </div>
+                </div>
+
+                <div class="pub-card">
+                    <div class="pub-title pub-title-ar">أعمال التنقيب الأثري في موقع العصيبية مديرية السدة – إب – 2008م</div>
+                    <div class="pub-title-en">"Archaeological excavations at the site Al-Osaibia –Al-Sadah, IBB governorate - 2008"</div>
+                    <div class="pub-meta">
+                        <span><i class="fas fa-book"></i> حولية الآثار اليمنية، العدد 2، ص 11–19</span>
+                        <span><i class="fas fa-users"></i> مشاركة مع: فؤاد القشم، أحمد شمسان، سمير القدسي</span>
+                    </div>
+                    <span class="pub-type article">مقال (مشاركة)</span>
+                    <div class="pub-links">
+                        <a href="https://www.mediafire.com/file/xiclcl9f7hufruu" target="_blank"><i class="fas fa-download"></i> تحميل</a>
+                    </div>
+                </div>
+
+                <div class="pub-card">
+                    <div class="pub-title pub-title-ar">الحيوانات في اليمن القديم دراسة أولية</div>
+                    <div class="pub-title-en">"The Animals in Ancient Yemen - a primary notes"</div>
+                    <div class="pub-meta">
+                        <span><i class="fas fa-book"></i> مجلة المتحف اليمني، العدد 3، ص 68–73</span>
+                        <span><i class="fas fa-map-pin"></i> صنعاء: الهيئة العامة للآثار والمتاحف</span>
+                    </div>
+                    <span class="pub-type article">مقال</span>
+                    <div class="pub-links">
+                        <a href="http://www.mediafire.com/file/4lsncbm2yn0wb1c/" target="_blank"><i class="fas fa-download"></i> تحميل</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 2008 -->
+        <div class="pub-year-group">
+            <div class="pub-year">
+                2008
+                <span class="year-line"></span>
+            </div>
+            <div class="pub-grid">
+
+                <div class="pub-card">
+                    <div class="pub-title pub-title-ar">التنقيبات الأثرية في موقع الحصمة – شقرة- محافظة أبين (الموسم السابع 2005م)</div>
+                    <div class="pub-title-en">"The 7th season Excavations project in Al-Husama–Shoqra in Abyan governorate"</div>
+                    <div class="pub-meta">
+                        <span><i class="fas fa-book"></i> حولية الآثار اليمنية، العدد 1، ص 6–43</span>
+                        <span><i class="fas fa-users"></i> مشاركة مع: أحمد شمسان، سالم العامري، سالم منصور، خالد الحاج</span>
+                    </div>
+                    <span class="pub-type article">مقال (مشاركة)</span>
+                    <div class="pub-links">
+                        <a href="https://www.mediafire.com/file/okshsih5pwo820e" target="_blank"><i class="fas fa-download"></i> تحميل</a>
+                    </div>
+                </div>
+
+                <div class="pub-card">
+                    <div class="pub-title pub-title-ar">حفرية موقع الرعارع، مديرية تبن-محافظة لحج (الموسم الخامس 2005م)</div>
+                    <div class="pub-title-en">"The 5th Excavations project in Ara'are' –Lahej governorate"</div>
+                    <div class="pub-meta">
+                        <span><i class="fas fa-book"></i> حولية الآثار اليمنية، العدد 1، ص 44–53</span>
+                        <span><i class="fas fa-users"></i> مشاركة مع: محمد السقاف، سمير القدسي، خالد علي</span>
+                    </div>
+                    <span class="pub-type article">مقال (مشاركة)</span>
+                    <div class="pub-links">
+                        <a href="https://www.mediafire.com/file/ychqk0xwdvmecbe" target="_blank"><i class="fas fa-download"></i> تحميل</a>
+                    </div>
+                </div>
+
+                <div class="pub-card">
+                    <div class="pub-title pub-title-ar">الأعمدة وتيجانها في اليمن القديم</div>
+                    <div class="pub-title-en">"The Columns and their Capitals in ancient Yemen"</div>
+                    <div class="pub-meta">
+                        <span><i class="fas fa-book"></i> مجلة المتحف اليمني، العدد 2، ص 55–64</span>
+                        <span><i class="fas fa-map-pin"></i> صنعاء: الهيئة العامة للآثار والمتاحف</span>
+                    </div>
+                    <span class="pub-type article">مقال</span>
+                    <div class="pub-links">
+                        <a href="https://www.mediafire.com/file/77v6gh075gsbh75/" target="_blank"><i class="fas fa-download"></i> تحميل</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 2007 -->
+        <div class="pub-year-group">
+            <div class="pub-year">
+                2007
+                <span class="year-line"></span>
+            </div>
+            <div class="pub-grid">
+
+                <div class="pub-card">
+                    <div class="pub-title pub-title-ar">نقش من متحف زنجبار (صورة جديدة لنقش Ry 461)</div>
+                    <div class="pub-title-en">"An Inscription in Zengbar Museum, New Picture for Ry 461"</div>
+                    <div class="pub-meta">
+                        <span><i class="fas fa-book"></i> مجلة المتحف اليمني، العدد 1، ص 39–46</span>
+                        <span><i class="fas fa-map-pin"></i> صنعاء: الهيئة العامة للآثار والمتاحف</span>
+                    </div>
+                    <span class="pub-type article">مقال</span>
+                    <div class="pub-links">
+                        <a href="http://www.mediafire.com/file/2a8g04wv5twj6a8" target="_blank"><i class="fas fa-download"></i> تحميل</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ===== DIGITAL TOOLS ===== -->
+        <h2 class="section-title" style="margin-top:60px;">
+            <i class="fas fa-tools"></i> برمجيات مساعدة وأدوات رقمية
+        </h2>
+
+        <div class="tools-grid">
+
+            <div class="tool-card">
+                <div class="tool-icon"><i class="fas fa-exchange-alt"></i></div>
+                <div class="tool-name">محول نصوص النقوش القديمة</div>
+                <div class="tool-desc">تحويل النقوش القديمة بين اللاتينية والعربية</div>
+                <a class="tool-link" href="https://drsalahalhusaini.github.io/converter/" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> زيارة الأداة
                 </a>
-                <a href="https://www.tiktok.com/@salah.alhusaini" class="social-link" target="_blank">
-                    <div class="social-icon">
-                        <i class="fab fa-tiktok"></i>
-                    </div>
-                    <span class="social-name" id="tiktokText">تيك توك</span>
+            </div>
+
+            <div class="tool-card">
+                <div class="tool-icon"><i class="fas fa-calendar-alt"></i></div>
+                <div class="tool-name">محول التواريخ</div>
+                <div class="tool-desc">تحويل التواريخ بين الميلادي والتقويمات اليمنية القديمة</div>
+                <a class="tool-link" href="https://drsalahalhusaini.blogspot.com/p/date-converter.html" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> زيارة الأداة
                 </a>
-                <a href="https://www.youtube.com/@SSAantique" class="social-link" target="_blank">
-                    <div class="social-icon">
+            </div>
+
+            <div class="tool-card">
+                <div class="tool-icon"><i class="fas fa-font"></i></div>
+                <div class="tool-name">خط المسند للكتابة بالحاسوب</div>
+                <div class="tool-desc">خط المسند للاستخدام في الكتابة الرقمية</div>
+                <a class="tool-link" href="https://www.mediafire.com/file/355y9z6rlyw4s5w" target="_blank">
+                    <i class="fas fa-download"></i> تحميل الخط
+                </a>
+            </div>
+
+        </div>
+
+        <!-- ===== VIDEOS (شبكة صور مصغرة محسّنة) ===== -->
+        <h2 class="section-title" style="margin-top:50px;">
+            <i class="fab fa-youtube" style="color:#cc181e;"></i> فيديوهات تعليمية على يوتيوب
+        </h2>
+
+        <div class="videos-grid">
+<!-- Video 1 -->
+            <div class="video-card">
+                <a href="https://youtu.be/a7jG6oYFCzE" target="_blank" class="video-thumb-link" aria-label="تشغيل فيديو تاجر عدني في قفط عام 70 ميلادي">
+                    <img src="https://img.youtube.com/vi/a7jG6oYFCzE/hqdefault.jpg" alt="صورة مصغرة لفيديو تاجر عدني في قفط" loading="lazy" />
+                    <div class="play-icon-overlay">
                         <i class="fab fa-youtube"></i>
                     </div>
-                    <span class="social-name" id="youtubeText">يوتيوب</span>
                 </a>
-                <a href="https://drsalahalhusaini.blogspot.com/" class="social-link" target="_blank">
-                    <div class="social-icon">
-                        <i class="fab fa-blogger-b"></i>
+                <div class="video-title">تاجر عدني في قفط عام 70 ميلادي</div>
+            </div>
+
+            <!-- Video 2 -->
+            <div class="video-card">
+                <a href="https://youtu.be/YsSgvWux9Kg" target="_blank" class="video-thumb-link" aria-label="تشغيل فيديو نقوش يمنية قديمة في مصر">
+                    <img src="https://img.youtube.com/vi/YsSgvWux9Kg/hqdefault.jpg" alt="صورة مصغرة لفيديو نقوش يمنية قديمة في مصر" loading="lazy" />
+                    <div class="play-icon-overlay">
+                        <i class="fab fa-youtube"></i>
                     </div>
-                    <span class="social-name" id="blogText">مدونة</span>
                 </a>
-                <a href="https://www.linkedin.com/in/alhusainisalah74/" class="social-link" target="_blank">
-                    <div class="social-icon">
-                        <i class="fab fa-linkedin-in"></i>
+                <div class="video-title">نقوش يمنية قديمة في مصر</div>
+            </div>
+
+            <!-- Video 3 -->
+            <div class="video-card">
+                <a href="https://youtu.be/O_P_STSTu4c" target="_blank" class="video-thumb-link" aria-label="تشغيل فيديو اليمن والصومال في القرن الثامن قبل الميلاد">
+                    <img src="https://img.youtube.com/vi/O_P_STSTu4c/hqdefault.jpg" alt="صورة مصغرة لفيديو اليمن والصومال في القرن الثامن قبل الميلاد" loading="lazy" />
+                    <div class="play-icon-overlay">
+                        <i class="fab fa-youtube"></i>
                     </div>
-                    <span class="social-name" id="linkedinText">لينكدإن</span>
                 </a>
-                <a href="https://reach.link/salahalhusaini" class="social-link" target="_blank">
-                    <div class="social-icon">
-                        <i class="fas fa-link"></i>
-                    </div>
-                    <span class="social-name" id="websiteText">الموقع</span>
+                <div class="video-title">اليمن والصومال في القرن الثامن قبل الميلاد</div>
+            </div>
+  
+            <!-- Video 4 -->
+            <div class="video-card">
+                <a href="https://youtu.be/aSaxIqe11Tw?si=ZVAc6G_HWbWZW7YN" target="_blank" class="video-thumb-link">
+                    <img src="https://img.youtube.com/vi/aSaxIqe11Tw/mqdefault.jpg" alt="طريقة تحويل الصورة الى رسم بالحبر الصيني بواسطة Gemini" loading="lazy">
+                    <div class="play-icon-overlay"><i class="fas fa-play-circle"></i></div>
+                </a>
+                <div class="video-title">طريقة تحويل الصورة الى رسم بالحبر الصيني بواسطة Gemini</div>
+            </div>
+
+            <!-- Video 5 -->
+            <div class="video-card">
+                <a href="https://youtu.be/ApkixgmlJh4?si=fLHUyv2eJwJVj0_D" target="_blank" class="video-thumb-link">
+                    <img src="https://img.youtube.com/vi/ApkixgmlJh4/mqdefault.jpg" alt="السليط في اليمن: الزيت النباتي، تاريخ وأنواع" loading="lazy">
+                    <div class="play-icon-overlay"><i class="fas fa-play-circle"></i></div>
+                </a>
+                <div class="video-title">السليط في اليمن: الزيت النباتي، تاريخ وأنواع</div>
+            </div>
+
+            <!-- 3 -->
+            <div class="video-card">
+                <a href="https://youtu.be/vYNXemwb_BI?si=1_ltLylouGA_9mGz" target="_blank" class="video-thumb-link">
+                    <img src="https://img.youtube.com/vi/vYNXemwb_BI/mqdefault.jpg" alt="رقمنة خط المسند" loading="lazy">
+                    <div class="play-icon-overlay"><i class="fas fa-play-circle"></i></div>
+                </a>
+                <div class="video-title">رقمنة خط المسند</div>
+            </div>
+
+            <!-- 4 -->
+            <div class="video-card">
+                <a href="https://youtu.be/Sf22MAvzbkY?si=n84gQdmvIt9itYW0" target="_blank" class="video-thumb-link">
+                    <img src="https://img.youtube.com/vi/Sf22MAvzbkY/mqdefault.jpg" alt="شرح مبسط لرسم الواجهات الجدارية التراثية بالاوتوكاد" loading="lazy">
+                    <div class="play-icon-overlay"><i class="fas fa-play-circle"></i></div>
+                </a>
+                <div class="video-title">شرح مبسط لرسم الواجهات الجدارية التراثية بالاوتوكاد</div>
+            </div>
+
+            <!-- 5 -->
+            <div class="video-card">
+                <a href="https://youtu.be/V5DLgwVrN9k?si=Ngo8i84Lu7mjK4tT" target="_blank" class="video-thumb-link">
+                    <img src="https://img.youtube.com/vi/V5DLgwVrN9k/mqdefault.jpg" alt="طريق البخور Incense Road" loading="lazy">
+                    <div class="play-icon-overlay"><i class="fas fa-play-circle"></i></div>
+                </a>
+                <div class="video-title">طريق البخور Incense Road</div>
+            </div>
+
+            <!-- 6 -->
+            <div class="video-card">
+                <a href="https://youtu.be/-90jUNJ-iF8?si=VEDzgYZFfwNOM9O7" target="_blank" class="video-thumb-link">
+                    <img src="https://img.youtube.com/vi/-90jUNJ-iF8/mqdefault.jpg" alt="طريقة مبسطة لتفريغ النقوش في برنامج ادوبي ايلستريتور" loading="lazy">
+                    <div class="play-icon-overlay"><i class="fas fa-play-circle"></i></div>
+                </a>
+                <div class="video-title">طريقة مبسطة لتفريغ النقوش في برنامج ادوبي ايلستريتور</div>
+            </div>
+
+            <!-- 7 -->
+            <div class="video-card">
+                <a href="https://youtu.be/ftYP2pkUyuk?si=wrm8MKOIvCj94VlR" target="_blank" class="video-thumb-link">
+                    <img src="https://img.youtube.com/vi/ftYP2pkUyuk/mqdefault.jpg" alt="تتبع صورة فضائية لليمن سنة 1966 بواسطة القمر الصناعي Gemini 11" loading="lazy">
+                    <div class="play-icon-overlay"><i class="fas fa-play-circle"></i></div>
+                </a>
+                <div class="video-title">تتبع صورة فضائية لليمن سنة 1966 بواسطة القمر الصناعي Gemini 11</div>
+            </div>
+
+            <!-- 8 -->
+            <div class="video-card">
+                <a href="https://youtu.be/b-Bx1yHRPts?si=zQcLQvktQ75CyUtS" target="_blank" class="video-thumb-link">
+                    <img src="https://img.youtube.com/vi/b-Bx1yHRPts/mqdefault.jpg" alt="استخراج النص من الصورة أو من ملف pdf بطريقة سهلة تدعم اللغة العربية" loading="lazy">
+                    <div class="play-icon-overlay"><i class="fas fa-play-circle"></i></div>
+                </a>
+                <div class="video-title">استخراج النص من الصورة أو من ملف pdf بطريقة سهلة تدعم اللغة العربية</div>
+            </div>
+
+            <!-- 9 -->
+            <div class="video-card">
+                <a href="https://youtu.be/MvsJ7wU55i8?si=vxCCPyxW3A4YRQba" target="_blank" class="video-thumb-link">
+                    <img src="https://img.youtube.com/vi/MvsJ7wU55i8/mqdefault.jpg" alt="تجار يمنيون يصلون إلى جزيرة ديلوس في اليونان فترة ما قبل الميلاد" loading="lazy">
+                    <div class="play-icon-overlay"><i class="fas fa-play-circle"></i></div>
+                </a>
+                <div class="video-title">تجار يمنيون يصلون إلى جزيرة ديلوس في اليونان فترة ما قبل الميلاد</div>
+            </div>
+
+            <!-- 10 -->
+            <div class="video-card">
+                <a href="https://youtu.be/XUoNZn9WuD0?si=G4TXg_2wXu9Mkkbm" target="_blank" class="video-thumb-link">
+                    <img src="https://img.youtube.com/vi/XUoNZn9WuD0/mqdefault.jpg" alt="استخدام الذكاء الاصطناعي في خدمة البحث العلمي تجربتي مع ChatGPT" loading="lazy">
+                    <div class="play-icon-overlay"><i class="fas fa-play-circle"></i></div>
+                </a>
+                <div class="video-title">استخدام الذكاء الاصطناعي في خدمة البحث العلمي تجربتي مع ChatGPT</div>
+            </div>
+
+            <!-- 11 -->
+            <div class="video-card">
+                <a href="https://youtu.be/gmwMumWpYlM?si=rb99_9bQ3ot5MvSF" target="_blank" class="video-thumb-link">
+                    <img src="https://img.youtube.com/vi/gmwMumWpYlM/mqdefault.jpg" alt="شرح طريقة تحويل النص من لاتيني لعربي (النقوش المسندية)" loading="lazy">
+                    <div class="play-icon-overlay"><i class="fas fa-play-circle"></i></div>
+                </a>
+                <div class="video-title">شرح طريقة تحويل النص من لاتيني لعربي (النقوش المسندية)</div>
+            </div>
+
+            <!-- 12 -->
+            <div class="video-card">
+                <a href="https://youtu.be/OBhA4ZeibaQ?si=zCq7ic33buUOOguI" target="_blank" class="video-thumb-link">
+                    <img src="https://img.youtube.com/vi/OBhA4ZeibaQ/mqdefault.jpg" alt="شرح طريقة البحث في المعجم السبئي الورقي والاليكتروني" loading="lazy">
+                    <div class="play-icon-overlay"><i class="fas fa-play-circle"></i></div>
+                </a>
+                <div class="video-title">شرح طريقة البحث في المعجم السبئي الورقي والاليكتروني</div>
+            </div>
+
+            <!-- 13 -->
+            <div class="video-card">
+                <a href="https://youtu.be/l2HFd7zRFb0?si=vuCYaIfmGCu2TOTF" target="_blank" class="video-thumb-link">
+                    <img src="https://img.youtube.com/vi/l2HFd7zRFb0/mqdefault.jpg" alt="شرح طريقة البحث في موقع مدونة النقوش العربية داسي DASI" loading="lazy">
+                    <div class="play-icon-overlay"><i class="fas fa-play-circle"></i></div>
+                </a>
+                <div class="video-title">شرح طريقة البحث في موقع مدونة النقوش العربية داسي DASI</div>
+            </div>
+
+            <!-- 14 -->
+            <div class="video-card">
+                <a href="https://youtu.be/5d4St-YOZpg?si=uWZUFWl4o9pOcVwh" target="_blank" class="video-thumb-link">
+                    <img src="https://img.youtube.com/vi/5d4St-YOZpg/mqdefault.jpg" alt="كيفية استخدام برنامج جوجل ايرث في عمل الخرائط للمبتدئين" loading="lazy">
+                    <div class="play-icon-overlay"><i class="fas fa-play-circle"></i></div>
+                </a>
+                <div class="video-title">كيفية استخدام برنامج جوجل ايرث في عمل الخرائط للمبتدئين</div>
+            </div>
+
+            <!-- 15 -->
+            <div class="video-card">
+                <a href="https://youtu.be/VMlNpCjEfcY?si=gqGNYrtD4eq8bT7t" target="_blank" class="video-thumb-link">
+                    <img src="https://img.youtube.com/vi/VMlNpCjEfcY/mqdefault.jpg" alt="شرح ادراج النقاط في ArcMap للمبتدئين" loading="lazy">
+                    <div class="play-icon-overlay"><i class="fas fa-play-circle"></i></div>
+                </a>
+                <div class="video-title">شرح ادراج النقاط في ArcMap للمبتدئين</div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-brand">
+                <i class="fas fa-scroll" style="color:#c5a880;margin-left:8px;"></i>
+                الدكتور <span>صلاح الحسيني</span>
+            </div>
+            <p style="font-size:0.9rem;color:#a0aec0;margin-bottom:6px;">
+                صفحة برعاية وتصميم الدكتور صلاح الحسيني
+            </p>
+            <div class="footer-links">
+                <a href="https://www.facebook.com/groups/arabia.books" target="_blank">
+                    <i class="fab fa-facebook"></i> مجموعة كتب تاريخ وآثار الجزيرة العربية
+                </a>
+                <a href="https://www.facebook.com/groups/461269647269460?multi_permalinks=1776268065769605&hoisted_section_header_type=recently_seen" target="_blank">
+                    <i class="fab fa-facebook"></i> المؤلفات على فيسبوك
                 </a>
             </div>
-        </section>
-    </div>
-    
-    <footer>
-        <p id="copyright">&copy; 2025 الدكتور صلاح الحسيني - جميع الحقوق محفوظة</p>
-        <p id="developedBy">تصميم وتطوير باستخدام HTML, CSS, JavaScript</p>
+            <div class="footer-copy">
+                <i class="fas fa-copyright" style="color:#c5a880;margin-left:4px;"></i>
+                2026 &mdash; جميع الحقوق محفوظة &bull; مكتبة رقمية متخصصة في تاريخ وآثار وتراث شبه الجزيرة العربية واليمن القديم
+            </div>
+        </div>
     </footer>
 
+    <!-- ===== BACK TO TOP SCRIPT ===== -->
     <script>
-        // ترجمة المحتوى
-        const translations = {
-            ar: {
-                langText: "English",
-                name: "د. صلاح سلطان عبده الحسيني",
-                jobTitle: "خبير في الآثار والتراث الثقافي",
-                location: "الرباط، المملكة المغربية",
-                aboutTitle: "نبذة عني",
-                aboutText: "دكتوراه في آثار ما قبل الإسلام، متخصص في الآثار اليمنية القديمة، خبير في الآثار والتراث، أكثر من 20 عامًا من الخبرة في مشاريع المسح والتنقيب والتوثيق الأثري، توثيق المواقع والمعالم باستخدام تقنيات متقدمة مثل نظم المعلومات الجغرافية (GIS) والاستشعار عن بُعد. لي أبحاث علمية منشورة ومشاركات في ندوات ومؤتمرات دولية. أمتلك خبرة في التعليم الجامعي، إدارة المحتوى الرقمي، وتصميم قواعد البيانات الأثرية. أجمع بين الاحترافية التقنية والمهارات القيادية والإبداعية في خدمة التراث الثقافي.",
-                educationTitle: "المؤهلات الأكاديمية",
-                phdTitle: "دكتوراه في آثار ما قبل الإسلام",
-                phdSubtitle: "كلية الآداب والعلوم الإنسانية، جامعة الحسن الثاني، المغرب",
-                phdDesc: 'عن أطروحة بعنوان "الحواجز الجدارية في المناطق المفتوحة في اليمن القديم - دراسة آثارية ميدانية" بتقدير مشرف جداً.',
-                masterTitle: "ماجستير في الآثار",
-                masterSubtitle: "جامعة عدن، اليمن",
-                masterDesc: 'عن رسالة بعنوان "طرق الدفن والأثاث الجنائزي في اليمن قبل الإسلام - موقع الحصمة، شُقرة" بتقدير ممتاز.',
-                diplomaTitle: "دبلوم في المنهجية الأثرية",
-                diplomaSubtitle: "المعهد الإيطالي لأفريقيا والشرق، إيطاليا",
-                bachelorTitle: "بكالوريوس آثار قديمة",
-                bachelorSubtitle: "قسم الآثار - كلية الآداب - جامعة صنعاء بتقدير جيد جداً",
-                experienceTitle: "الخبرات الميدانية",
-                surveyTitle: "أعمال المسح الأثري",
-                surveySubtitle: "مسح عدد من المواقع الأثرية",
-                surveyDesc: "المشاركة في فرق المسح الأثري لمواقع أثرية في اليمن والمغرب. في اليمن محافظات مثل: أبين، المهرة، تعز، مارب، لحج، والمحويت، وحضرموت(2002 - 2012 وفي مشاريع توثيق وحفريات في المغرب في الرباط (شالة) ومكناس (وليلي) 2015 و 2024.",
-                excavationTitle: "أعمال التنقيب الأثري",
-                excavationText: "تنفيذ عدد من التنقيبات",
-                excavationSubtitle: "المشاركة في أعمال الحفريات والتنقيب الميداني مواقع مثل: الحصمة 9 مواسم، واللبيب في أبين، العصيبية في  إب، المرصبة في المحويت، الرعارع في لحج، معبد أوام في مارب، تمنع وجردان في شبوة، مقولة في صنعاء، حضور همدان في صنعاء",
-                documentationTitle: "أعمال التوثيق الأثري",
-                documentationSubtitle: "تنفيذ عدد من مشاريع التوثيق",
-                documentationDesc: "المشاركة في توثيق الآثار والمباني الأثرية والمتاحف مع فرق بحثية ومؤسسات دولية ومحلية في مشاريع توثيق أثري تضمنت تسجيل المباني الأثرية، الفخاريات واللقى الأثرية، توثيق النقوش اليمنية القديمة وحصر القطع الأثرية في المتاحف مثل متحف بيحان ومتحف بينون ومتحف جامعة ذمار ومتحف ذمار الاقليمي، بالإضافة إلى المشاركة في تصوير فيلم عن المومياوات اليمنية مع فريق دولي.",
-                skillsTitle: "المهارات والخبرات",
-                archaeologySkills: "المهارات الأثرية",
-                skill1: "المسح والتنقيب الأثري",
-                skill2: "التوثيق الأثري",
-                skill3: "دراسة اللقى الأثرية",
-                skill4: "دراسة الطبقات الأثرية",
-                technicalSkills: "المهارات التقنية",
-                skill5: "نظم المعلومات الجغرافية (GIS)",
-                skill6: "AutoCAD للرسم الهندسي",
-                skill7: "Adobe Photoshop/InDesign",
-                skill8: "تصميم قواعد البيانات",
-                skill9: "تصميم برامج مساعدة لعلم الآثار",
-                skill10: "تصميم مواقع الويب",
-                academicSkills: "المهارات الأكاديمية",
-                skill11: "البحث العلمي",
-                skill12: "التأليف والنشر",
-                skill13: "إدارة المجلات العلمية",
-                skill14: "التدريس الجامعي",
-                languagesTitle: "اللغات",
-                lang1: "العربية: اللغة الأم",
-                lang2: "الإنجليزية: متقدم",
-                lang3: "الفرنسية: مبتدئ",
-                publicationsTitle: "المؤلفات والمنشورات",
-                academiaTitle: "صفحتي على اكاديميا",
-                academiaDesc: "الأبحاث والمؤلفات العلمية",
-                viewPublications: "عرض المنشورات",
-                allWorksTitle: "جميع المؤلفات والبرامج",
-                allWorksDesc: "مجموعة من الأبحاث في مجال الآثار والتراث",
-                viewResearch: "عرض الأبحاث",
-                toolsTitle: "الأدوات الرقمية المطورة",
-                converterTitle: "محول نصوص النقوش",
-                converterDesc: "تحويل النقوش من الخط اللاتيني إلى العربي والعكس",
-                useConverter: "استخدام الأداة",
-                dateConverterTitle: "محول التواريخ اليمنية",
-                dateConverterDesc: "تحويل التواريخ اليمنية القديمة",
-                useDateConverter: "استخدام الأداة",
-                fontTitle: "خط المسند",
-                fontDesc: "خط للكتابة بالمسند في برامج النصوص",
-                downloadFont: "تحميل الخط",
-                socialTitle: "وسائل التواصل والمحتوى الرقمي",
-                facebookText: "فيسبوك",
-                tiktokText: "تيك توك",
-                youtubeText: "يوتيوب",
-                blogText: "مدونة",
-                linkedinText: "لينكدإن",
-                websiteText: "الموقع",
-                copyright: "&copy; 2025 الدكتور صلاح الحسيني - جميع الحقوق محفوظة",
-                developedBy: "تصميم وتطوير باستخدام HTML, CSS, JavaScript"
-            },
-            en: {
-                langText: "العربية",
-                name: "Dr. Salah Sultan Abdo Al-Husaini",
-                jobTitle: "Archaeology and Cultural Heritage Expert",
-                location: "Rabat, Kingdom of Morocco",
-                aboutTitle: "About Me",
-                aboutText: "PhD in Pre-Islamic Archaeology, specializing in ancient Yemeni antiquities, with over 20 years of experience in archaeological survey, excavation, and documentation. Expert in using advanced techniques like GIS and remote sensing for heritage documentation. Published researcher with international conference participations. Experienced in university teaching, digital content management, and archaeological database design. Combines technical expertise with leadership and creative skills in cultural heritage preservation.",
-                educationTitle: "Education",
-                phdTitle: "PhD in Pre-Islamic Archaeology",
-                phdSubtitle: "Faculty of Arts and Humanities, Hassan II University, Morocco",
-                phdDesc: 'Thesis titled "Wall Barriers in Open Areas of Ancient Yemen - An Archaeological Field Study" with highest honors.',
-                masterTitle: "Master's in Archaeology",
-                masterSubtitle: "Aden University, Yemen",
-                masterDesc: 'Thesis titled "Burial Methods and Funerary Furniture in Pre-Islamic Yemen - Al-Husmah Site, Shokra" with excellent grade.',
-                diplomaTitle: "Diploma in Archaeological Methodology",
-                diplomaSubtitle: "Italian Institute for Africa and the East, Italy",
-                bachelorTitle: "Bachelor in Ancient Archaeology",
-                bachelorSubtitle: "Department of Archaeology, Sana'a University with very good grade",
-                experienceTitle: "Field Experience",
-                surveyTitle: "Archaeological Survey Work",
-                surveySubtitle: "Survey of multiple archaeological sites",
-                surveyDesc: "Participated in archaeological survey teams for sites in Yemen and Morocco. In Yemen: Abyan, Al-Mahra, Taiz, Marib, Lahj, Al-Mahwit, and Hadramout (2002-2012). In Morocco: Documentation and excavation projects in Rabat (Chellah) and Meknes (Volubilis) 2015 and 2024.",
-                excavationTitle: "Archaeological Excavation Work",
-                excavationText: "Conducted multiple excavations",
-                excavationSubtitle: "Participation in excavation fieldwork at sites including: Al-Husmah (9 seasons), Al-Labeeb in Abyan, Al-Asaybiyah in Ibb, Al-Marsabah in Al-Mahwit, Al-Ra'are' in Lahj, Awwam Temple in Marib, Tamna' and Jardan in Shabwa, Maqolah in Sana'a, and Hadur Hamdan in Sana'a.",
-                documentationTitle: "Archaeological Documentation Work",
-                documentationSubtitle: "Implementation of documentation projects",
-                documentationDesc: "Participated in documenting antiquities, archaeological buildings, and museums with local and international research teams. Projects included registering architectural monuments, pottery and artifacts, documenting ancient Yemeni inscriptions, and inventorying museum collections at Bayhan Museum, Binon Museum, Dhamar University Museum, and Dhamar Regional Museum. Also participated in filming a documentary about Yemeni mummies with an international team.",
-                skillsTitle: "Skills and Expertise",
-                archaeologySkills: "Archaeological Skills",
-                skill1: "Archaeological survey and excavation",
-                skill2: "Archaeological documentation",
-                skill3: "Artifact analysis",
-                skill4: "Stratigraphic analysis",
-                technicalSkills: "Technical Skills",
-                skill5: "Geographic Information Systems (GIS)",
-                skill6: "AutoCAD for technical drawing",
-                skill7: "Adobe Photoshop/InDesign",
-                skill8: "Database design",
-                skill9: "Designing archaeology software tools",
-                skill10: "Web design",
-                academicSkills: "Academic Skills",
-                skill11: "Scientific research",
-                skill12: "Authoring and publishing",
-                skill13: "Managing academic journals",
-                skill14: "University teaching",
-                languagesTitle: "Languages",
-                lang1: "Arabic: Native",
-                lang2: "English: Advanced",
-                lang3: "French: Beginner",
-                publicationsTitle: "Publications",
-                academiaTitle: "My Profile on Academia",
-                academiaDesc: "Scientific research and publications",
-                viewPublications: "View Publications",
-                allWorksTitle: "All Publications and Programs",
-                allWorksDesc: "Collection of research in archaeology and heritage",
-                viewResearch: "View Research",
-                toolsTitle: "Developed Digital Tools",
-                converterTitle: "Inscriptions Text Converter",
-                converterDesc: "Convert inscriptions from Latin to Arabic script and vice versa",
-                useConverter: "Use Tool",
-                dateConverterTitle: "Yemeni Date Converter",
-                dateConverterDesc: "Convert ancient Yemeni dates",
-                useDateConverter: "Use Tool",
-                fontTitle: "Musnad Font",
-                fontDesc: "Font for writing in Musnad script in text programs",
-                downloadFont: "Download Font",
-                socialTitle: "Social Media and Digital Content",
-                facebookText: "Facebook",
-                tiktokText: "TikTok",
-                youtubeText: "YouTube",
-                blogText: "Blog",
-                linkedinText: "LinkedIn",
-                websiteText: "Website",
-                copyright: "&copy; 2025 Dr. Salah Al-Husaini - All Rights Reserved",
-                developedBy: "Designed and developed with HTML, CSS, JavaScript"
+        const backBtn = document.getElementById('backTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                backBtn.classList.add('visible');
+            } else {
+                backBtn.classList.remove('visible');
             }
-        };
+        });
 
-        // تبديل اللغة
-        const languageToggle = document.getElementById('languageToggle');
-        let currentLang = 'ar';
-
-        function toggleLanguage() {
-            currentLang = currentLang === 'ar' ? 'en' : 'ar';
-            updateContent(currentLang);
-            document.body.classList.toggle('english', currentLang === 'en');
-        }
-
-        function updateContent(lang) {
-            const elements = document.querySelectorAll('[id]');
-            elements.forEach(element => {
-                const translation = translations[lang][element.id];
-                if (translation !== undefined) {
-                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                        element.value = translation;
-                    } else {
-                        element.innerHTML = translation;
-                    }
-                }
-            });
-        }
-
-        languageToggle.addEventListener('click', toggleLanguage);
-
-        // التهيئة الأولية
-        updateContent(currentLang);
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
     </script>
+
 </body>
 </html>
